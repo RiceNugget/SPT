@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="search_friends_text">Search for friends</string>
+    <string name="welcome_message">Welcome to KEA!</string>
+    <string name="continue_message">Click here to continue!</string>
+    <string name="log_out_message">Log Out</string>
+
+</resources>
