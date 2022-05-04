@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.KEA;
 public class TimeFrame {
     //data
     private int month;
