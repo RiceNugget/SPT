@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".CalendarsFragment"
     >
 
     <TableLayout
@@ -53,6 +54,7 @@
                 android:text="@string/busy_button"
                 android:textColor="@color/design_default_color_background"
                 android:textSize="14sp"></TextView>
+
         </TableRow>
 
         <!--Table Data-->
@@ -91,11 +93,12 @@
                 tools:ignore="DuplicateSpeakableTextCheck"></Button>
 
             <Button
+                android:id="@+id/availButton1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
-                android:backgroundTint="@color/red"
                 android:gravity="center_horizontal"
+                android:onClick="onClick"
                 android:padding="10sp"
                 android:text="@string/busy_button"
                 android:textColor="@color/white"

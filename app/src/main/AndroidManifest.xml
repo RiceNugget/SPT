@@ -12,20 +12,26 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
         <activity
-            android:name="com.example.KEA.HolyShit"
+            android:name=".CalendarActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.KEA.CrossCheck"
+            android:name=".CreateEvent"
             android:exported="false" />
         <activity
-            android:name="com.example.KEA.RegisterUser"
+            android:name=".HolyShit"
             android:exported="false" />
         <activity
-            android:name="com.example.KEA.NavActivity"
+            android:name=".CrossCheck"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterUser"
+            android:exported="false" />
+        <activity
+            android:name=".NavActivity"
             android:exported="false"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.example.KEA.MainActivity"
+            android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

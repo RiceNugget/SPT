@@ -2,7 +2,7 @@ package com.example.KEA;
 
 public class User {
     public boolean available;
-    public String name, email, userName;
+    public String name, email, userName,password;
     // Krishna's constructor
     public User(String name, boolean available) {
         this.name = name;
@@ -18,8 +18,8 @@ public class User {
 
     }
 
-    public User(String userName, String email) {
-        this.userName = userName;
+    public User(String email, String password) {
+        this.password = password;
         this.email = email;
 
     }
@@ -29,7 +29,9 @@ public class User {
     public void setAvailable(boolean available) {
         this.available = available;
     }
-
+    public void changeAvailability(){
+        available = true;
+    }
     public void setName(String name) {
         this.name = name;
     }

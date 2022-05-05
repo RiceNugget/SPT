@@ -2,8 +2,10 @@ package com.example.KEA;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -11,11 +13,13 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
 
 public class HolyShit extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     private DrawerLayout drawer;
+    private FloatingActionButton createEventButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +28,8 @@ public class HolyShit extends AppCompatActivity implements NavigationView.OnNavi
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
+        //createEventButton = findViewById(R.id.createEventButton);
+        //createEventButton.setOnClickListener((View.OnClickListener) this);
 
         drawer = findViewById(R.id.drawer_layout1);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -52,12 +57,11 @@ public class HolyShit extends AppCompatActivity implements NavigationView.OnNavi
                 break;
 
             case R.id.nav_calendars:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new CalendarsFragment()).commit();
+                startActivity(new Intent(HolyShit.this,CalendarActivity.class));
                 break;
 
             case R.id.nav_home:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+               getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new HomeFragment()).commit();
                 break;
 
@@ -77,6 +81,15 @@ public class HolyShit extends AppCompatActivity implements NavigationView.OnNavi
         } else {
             super.onBackPressed();
         }
+    }
 
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.createEventButton:
+                startActivity(new Intent(this,CreateEvent.class));
+                break;
+
+        }
     }
 }
+
