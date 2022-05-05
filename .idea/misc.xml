@@ -7,14 +7,8 @@
         <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/drawable-v24/ic_home.xml" value="0.1" />
         <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/drawable-v24/ic_logout.xml" value="0.1" />
         <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/drawable-v24/ic_schedule.xml" value="0.1" />
-        <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/drawable/ic_calendar.xml" value="0.1475" />
-        <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/drawable/ic_friends.xml" value="0.1475" />
-        <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/drawable/ic_home.xml" value="0.1475" />
-        <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/drawable/ic_logout.xml" value="0.1475" />
-        <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/drawable/ic_schedule.xml" value="0.1475" />
         <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/layout/activity_create_event.xml" value="0.1765625" />
         <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/layout/activity_cross_check.xml" value="0.1765625" />
-        <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/layout/activity_holy_shit.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.1765625" />
         <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/layout/activity_register_user.xml" value="0.1765625" />
         <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/layout/activity_second.xml" value="0.1765625" />
@@ -24,8 +18,16 @@
         <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/layout/fragment_home.xml" value="0.1765625" />
         <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/layout/nav_header.xml" value="0.1765625" />
         <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/menu/drawer_menu.xml" value="0.1765625" />
+        <entry key="app/src/main/res/layout/activity_create_event.xml" value="0.15070921985815602" />
+        <entry key="app/src/main/res/layout/activity_cross_check.xml" value="0.15070921985815602" />
+        <entry key="app/src/main/res/layout/activity_holy_shit.xml" value="0.15070921985815602" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.15070921985815602" />
+        <entry key="app/src/main/res/layout/activity_register_user.xml" value="0.15070921985815602" />
         <entry key="app/src/main/res/layout/activity_third.xml" value="0.15070921985815602" />
         <entry key="app/src/main/res/layout/fragment_calendars.xml" value="0.31381988525390625" />
+        <entry key="app/src/main/res/layout/fragment_friends.xml" value="0.15070921985815602" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.15070921985815602" />
+        <entry key="app/src/main/res/layout/nav_header.xml" value="0.15070921985815602" />
       </map>
     </option>
   </component>

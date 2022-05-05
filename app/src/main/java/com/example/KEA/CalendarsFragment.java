@@ -1,6 +1,7 @@
 package com.example.KEA;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ public class CalendarsFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
+        Log.d("Eeman","inCalendarsFragmentOnCreate");
         return inflater.inflate(R.layout.fragment_calendars,container,false);
 
 
