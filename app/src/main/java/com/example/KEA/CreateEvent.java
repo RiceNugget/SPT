@@ -1,6 +1,9 @@
 package com.example.KEA;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +18,8 @@ public class CreateEvent extends AppCompatActivity {
     private EditText enterEmails;
     private EditText durationEntry;
     private EditText dateEntry;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,5 +43,7 @@ public class CreateEvent extends AppCompatActivity {
         Day = Integer.parseInt(DateString.substring(3,5));
         Year = Integer.parseInt(DateString.substring(6,10));
 
+
     }
+
 }

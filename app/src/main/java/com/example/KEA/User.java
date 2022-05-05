@@ -29,7 +29,9 @@ public class User {
     public void setAvailable(boolean available) {
         this.available = available;
     }
-
+    public void changeAvailability(){
+        available = true;
+    }
     public void setName(String name) {
         this.name = name;
     }
