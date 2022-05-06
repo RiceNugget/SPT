@@ -39,7 +39,6 @@
     <string name="nine_PM_block">9:00–9:30 PM-</string>
     <string name="nine_thirty_PM_block">9:30–10:00 PM-</string>
     <string name="free_button">Free</string>
-    <string name="free_button_question">Free?</string>
-    <string name="busy_button">Busy</string>
+    <string name="busy_button">set</string>
     <string name="set_date">mm/dd/yyyy</string>
 </resources>

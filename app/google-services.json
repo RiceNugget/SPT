@@ -1,62 +1,34 @@
 {
   "project_info": {
-    "project_number": "56294365536",
-    "project_id": "myloginapp-c3ba1",
-    "storage_bucket": "myloginapp-c3ba1.appspot.com"
+    "project_number": "584285605962",
+    "firebase_url": "https://keaspt-57b87-default-rtdb.firebaseio.com",
+    "project_id": "keaspt-57b87",
+    "storage_bucket": "keaspt-57b87.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:56294365536:android:4e516e4cbaab2957e4e605",
+        "mobilesdk_app_id": "1:584285605962:android:4b6eff6cf39a1ea3c796b3",
         "android_client_info": {
           "package_name": "com.example.myapplication"
         }
       },
       "oauth_client": [
         {
-          "client_id": "56294365536-ssolp56fripg2unve4r2bmjf9lgfbomv.apps.googleusercontent.com",
+          "client_id": "584285605962-j5e1dhd3d55nehupps19vp8s95bhjnua.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBFKVnWHVONjVdSy-rgFr7rbM6dfjRGL2E"
+          "current_key": "AIzaSyAT6QT0nBru3kDEIcoIHjDiaTK3H3mEWaQ"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "56294365536-ssolp56fripg2unve4r2bmjf9lgfbomv.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:56294365536:android:c233d68978b4e18be4e605",
-        "android_client_info": {
-          "package_name": "com.example.myloginapp"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "56294365536-ssolp56fripg2unve4r2bmjf9lgfbomv.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyBFKVnWHVONjVdSy-rgFr7rbM6dfjRGL2E"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "56294365536-ssolp56fripg2unve4r2bmjf9lgfbomv.apps.googleusercontent.com",
+              "client_id": "584285605962-j5e1dhd3d55nehupps19vp8s95bhjnua.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
