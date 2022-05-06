@@ -2,7 +2,6 @@ package com.example.KEA;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -29,18 +28,8 @@ public class HolyShit extends AppCompatActivity implements NavigationView.OnNavi
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        createEventButton = findViewById(R.id.createEventButton);
-       createEventButton.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-               switch (view.getId()){
-                   case R.id.createEventButton:
-                       startActivity(new Intent(getApplicationContext(),CreateEvent.class));
-                       break;
-
-               }
-           }
-       });
+        //createEventButton = findViewById(R.id.createEventButton);
+        //createEventButton.setOnClickListener((View.OnClickListener) this);
 
         drawer = findViewById(R.id.drawer_layout1);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -91,6 +80,15 @@ public class HolyShit extends AppCompatActivity implements NavigationView.OnNavi
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
+        }
+    }
+
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.createEventButton:
+                startActivity(new Intent(this,CreateEvent.class));
+                break;
+
         }
     }
 }
