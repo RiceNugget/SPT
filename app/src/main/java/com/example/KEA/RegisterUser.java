@@ -1,7 +1,8 @@
-package com.example.myapplication;
+package com.example.KEA;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -61,15 +62,11 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
     }
 
     private void signUpUser() {
+        Log.d("anh", "in signUpUser");
         String email = enterEmail.getText().toString().trim();
         String password = enterPassword.getText().toString().trim();
-        String username = enterUserName.getText().toString().trim();
 
-        if (username.isEmpty()) {
-            enterUserName.setError("Username is empty!");
-            enterUserName.requestFocus();
-            return;
-        }
+
         if (email.isEmpty()) {
             enterEmail.setError("Email is not valid!");
             enterEmail.requestFocus();
@@ -97,11 +94,12 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
 
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+                        Log.d("anh", "in onComplete1");
                         if (task.isSuccessful()) {
-                            User user = new User(username, email);
+                            Log.d("anh", "in Successful");
+                            User user = new User(email, password);
 
                             //Setting the ID of the new account from Firebase to the user object
                             FirebaseDatabase.getInstance().getReference("Users")
@@ -109,6 +107,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                                     .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
+                                            Log.d("anh", "in onComplete2");
                                             if (task.isSuccessful()) {
                                                 Toast.makeText(RegisterUser.this, "Signed Up sucessfully!", Toast.LENGTH_LONG).show();
 

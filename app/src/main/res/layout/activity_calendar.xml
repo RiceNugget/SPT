@@ -1,0 +1,1273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CalendarActivity"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#457B9D"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <Button
+        android:id="@+id/goHome"
+        android:layout_width="407dp"
+        android:layout_height="53dp"
+        android:layout_marginEnd="4dp"
+        android:text="go Home"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".CalendarsFragment"
+        >
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="40dp"
+            android:background="@android:color/white">
+
+            <!-- Table heading-->
+            <TableRow android:background="@color/theme">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/set_date"
+                    android:textColor="@color/design_default_color_background"
+                    android:textSize="14sp"></TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="Time"
+                    android:textColor="@color/design_default_color_background"
+                    android:textSize="14sp"></TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/busy_button"
+                    android:textColor="@color/design_default_color_background"
+                    android:textSize="14sp"></TextView>
+
+            </TableRow>
+
+            <!--Table Data-->
+            <TableRow>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/set_date"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/six_AM_block"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+
+                <Button
+                    android:id="@+id/availButton1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/busy_button"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    tools:ignore="TextContrastCheck"></Button>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/set_date"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/six_thirty_AM_block"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <Button
+                    android:id="@+id/availButton2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/busy_button"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    tools:ignore="TextContrastCheck"></Button>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/set_date"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/seven_AM_block"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:backgroundTint="@color/red"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/busy_button"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"></Button>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/set_date"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/seven_thirty_AM_block"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:backgroundTint="@color/red"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/busy_button"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"></Button>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/set_date"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/eight_AM_block"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:backgroundTint="@color/red"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/busy_button"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"></Button>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/set_date"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/eight_thirty_AM_block"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:backgroundTint="@color/red"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/busy_button"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"></Button>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/set_date"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/nine_AM_block"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:backgroundTint="@color/red"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/busy_button"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"></Button>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/set_date"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/nine_thirty_AM_block"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:backgroundTint="@color/red"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/busy_button"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"></Button>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/set_date"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/ten_AM_block"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:backgroundTint="@color/red"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/busy_button"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"></Button>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/set_date"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/ten_thirty_AM_block"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:backgroundTint="@color/red"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/busy_button"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"></Button>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/set_date"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/eleven_AM_block"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:backgroundTint="@color/red"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/busy_button"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"></Button>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/set_date"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/eleven_thirty_AM_block"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:backgroundTint="@color/red"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/busy_button"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"></Button>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/set_date"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/twelve_PM_block"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:backgroundTint="@color/red"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/busy_button"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"></Button>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/set_date"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/twelve_thirty_PM_block"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:backgroundTint="@color/red"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/busy_button"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"></Button>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/set_date"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/one_PM_block"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:backgroundTint="@color/red"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/busy_button"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"></Button>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/set_date"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/one_thirty_PM_block"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:backgroundTint="@color/red"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/busy_button"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"></Button>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/set_date"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/two_PM_block"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:backgroundTint="@color/red"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/busy_button"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"></Button>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/set_date"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/two_thirty_PM_block"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:backgroundTint="@color/red"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/busy_button"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"></Button>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/set_date"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/three_PM_block"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:backgroundTint="@color/red"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/busy_button"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"></Button>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/set_date"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/three_thirty_PM_block"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:backgroundTint="@color/red"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/busy_button"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"></Button>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/set_date"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/four_PM_block"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:backgroundTint="@color/red"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/busy_button"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"></Button>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/set_date"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/four_thirty_PM_block"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:backgroundTint="@color/red"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/busy_button"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"></Button>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/set_date"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/five_PM_block"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:backgroundTint="@color/red"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/busy_button"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"></Button>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/set_date"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/five_thirty_PM_block"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:backgroundTint="@color/red"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/busy_button"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"></Button>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/set_date"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/six_PM_block"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:backgroundTint="@color/red"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/busy_button"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"></Button>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/set_date"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/six_thirty_PM_block"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:backgroundTint="@color/red"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/busy_button"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"></Button>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/set_date"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/seven_PM_block"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:backgroundTint="@color/red"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/busy_button"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"></Button>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/set_date"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/seven_thirty_PM_block"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:backgroundTint="@color/red"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/busy_button"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"></Button>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/set_date"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/eight_PM_block"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:backgroundTint="@color/red"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/busy_button"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"></Button>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/set_date"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/eight_thirty_PM_block"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:backgroundTint="@color/red"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/busy_button"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"></Button>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/set_date"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/nine_PM_block"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:backgroundTint="@color/red"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/busy_button"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"></Button>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/set_date"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/nine_thirty_PM_block"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:backgroundTint="@color/red"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/busy_button"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"></Button>
+
+            </TableRow>
+
+        </TableLayout>
+    </ScrollView>
+
+
+
+
+</LinearLayout>
