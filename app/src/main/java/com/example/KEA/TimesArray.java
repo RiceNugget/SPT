@@ -7,6 +7,7 @@ public class TimesArray {
     private int Year;
     private int duration;
     public int numUsers;
+
     public TimesArray(int Day, int Month, int Year, int duration, int numUsers) {
         //28 30 min windows = 16 hours (starting at 6 AM to 10 PM)
         times = new Users[32][duration];
