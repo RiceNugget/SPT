@@ -41,9 +41,8 @@ public class CreateEvent extends AppCompatActivity implements View.OnClickListen
                     if (EmailsEntered.charAt(i) == ',') {
                         numUsers++;
                     }
-
-
                 }
+                break;
         }
         numUsers++;
         //needs this last statement because there is 1 more user than commas.
