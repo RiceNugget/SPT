@@ -1,5 +1,6 @@
 package com.example.KEA;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -8,17 +9,18 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class CreateEvent extends AppCompatActivity {
+public class CreateEvent extends AppCompatActivity implements View.OnClickListener{
     public int numUsers;
     public int duration;
     public int Month;
     public int Day;
     public int Year;
 
+
     private EditText enterEmails;
     private EditText durationEntry;
     private EditText dateEntry;
-
+    private Button funny;
 
 
     @Override
@@ -33,17 +35,27 @@ public class CreateEvent extends AppCompatActivity {
                 numUsers++;
             }
         }
+
+        funny = findViewById(R.id.CreateEventButton);
+        funny.setOnClickListener(this);
         numUsers++;
         //needs this last statement because there is 1 more user than commas.
-        durationEntry = findViewById(R.id.NumberOfDays);
-        duration = Integer.parseInt(durationEntry.getText().toString());
-        dateEntry = findViewById(R.id.EnterDate);
-        String DateString = dateEntry.getText().toString();
-        Month = Integer.parseInt(DateString.substring(0,2));
-        Day = Integer.parseInt(DateString.substring(3,5));
-        Year = Integer.parseInt(DateString.substring(6,10));
+       // durationEntry = findViewById(R.id.NumberOfDays);
+        //duration = Integer.parseInt(durationEntry.getText().toString());
+        //dateEntry = findViewById(R.id.EnterDate);
+        //String DateString = dateEntry.getText().toString();
+        //Month = Integer.parseInt(DateString.substring(0,2));
+        //Day = Integer.parseInt(DateString.substring(3,5));
+       // Year = Integer.parseInt(DateString.substring(6,10));
 
 
     }
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case (R.id.CreateEventButton):
+                startActivity(new Intent(CreateEvent.this, HolyShit.class));
+        }
+    }
 }
