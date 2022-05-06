@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="148dp"
         android:layout_marginTop="236dp"
-        android:text="share with"
+        android:text="@string/share_with"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CreateAnEvent" />
@@ -24,22 +24,22 @@
         android:layout_height="51dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="12dp"
+        android:autofillHints=""
         android:ems="10"
         android:gravity="start|top"
-        android:hint="enter email separate"
+        android:hint="@string/enter_email_separate"
         android:inputType="textMultiLine"
-        android:textSize="14sp"
+        android:textSize="13sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ShareWith"
-        tools:ignore="TextContrastCheck"
-        android:autofillHints="" />
+        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:id="@+id/CreateAnEvent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:text="create an event"
+        android:text="@string/create_an_event"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginTop="36dp"
-        android:text="start date"
+        android:text="@string/start_date"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CreateAnEvent" />
@@ -62,7 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:ems="10"
-        android:hint="mm/dd/yy"
+        android:hint="@string/mm_dd_yy"
         android:inputType="date"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -78,7 +78,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
         android:layout_marginTop="140dp"
-        android:text="duration"
+        android:text="@string/duration"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CreateAnEvent" />
@@ -90,7 +90,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="60dp"
         android:ems="10"
-        android:hint="of days"
+        android:hint="@string/of_days"
         android:inputType="number"
         app:layout_constraintStart_toEndOf="@+id/Duration"
         app:layout_constraintTop_toBottomOf="@+id/EnterDate"
@@ -103,7 +103,7 @@
         android:layout_height="104dp"
         android:layout_marginTop="88dp"
         android:layout_marginEnd="104dp"
-        android:text="Creat Event"
+        android:text="@string/create_event"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/EnterEmails" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,5 +6,12 @@
     <string name="welcome_message">Welcome to KEA!</string>
     <string name="continue_message">Click here to continue!</string>
     <string name="log_out_message">Log Out</string>
-
+    <string name="enter_email_separate">enter emails separated with: \", \". Also Include Your Own Email</string>
+    <string name="of_days"># of days</string>
+    <string name="create_event">Create Event</string>
+    <string name="duration">duration</string>
+    <string name="mm_dd_yy">mm/dd/yy</string>
+    <string name="start_date">start date</string>
+    <string name="create_an_event">Create an Event</string>
+    <string name="share_with">share with</string>
 </resources>
