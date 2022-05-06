@@ -8,58 +8,89 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+
 public class CreateEvent extends AppCompatActivity implements View.OnClickListener{
-    public int numUsers;
-    public int duration;
-    public int Month;
-    public int Day;
-    public int Year;
-    public TimesArray array;
+    public int numUsers, duration, month, day, year;
 
-    private EditText enterEmails;
-    private EditText durationEntry;
-    private EditText dateEntry;
+    public TimesArray timeSheet;
 
-    private Button createEvent;
+    String emailsStr, durationStr, dateStr;
+
+    private EditText emailsEntry, durationEntry, dateEntry;
+
+    private Button createEventButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_event);
-        createEvent = findViewById(R.id.CreateEventButton);
-        createEvent.setOnClickListener(this);
+
+        createEventButton = findViewById(R.id.CreateEventButton);
+        createEventButton.setOnClickListener(this);
+
+        emailsEntry = findViewById(R.id.enterEmailsInvite);
+        durationEntry = findViewById(R.id.enterDuration);
+        dateEntry = findViewById(R.id.enterDate);
+
     }
+
     public void onClick(View view) {
         switch (view.getId()) {
             case (R.id.CreateEventButton):
-                startActivity(new Intent(CreateEvent.this, HolyShit.class));
-
-                numUsers = 0;
-                enterEmails = findViewById(R.id.EnterEmails);
-                String EmailsEntered = enterEmails.getText().toString();
-                for (int i = 0; i < EmailsEntered.length(); i++) {
-                    if (EmailsEntered.charAt(i) == ',') {
-                        numUsers++;
-                    }
+                newEvent();
+                //startActivity(new Intent(CreateEvent.this, CalendarActivity.class));
+                break;
 
 
-                }
         }
-        numUsers++;
-        //needs this last statement because there is 1 more user than commas.
-        //note that the user enters their email as well
-        durationEntry = findViewById(R.id.NumberOfDays);
-        duration = Integer.parseInt(durationEntry.getText().toString());
-        dateEntry = findViewById(R.id.EnterDate);
-        String DateString = dateEntry.getText().toString();
-        Month = Integer.parseInt(DateString.substring(0,2));
-        Day = Integer.parseInt(DateString.substring(3,5));
-        Year = Integer.parseInt(DateString.substring(6,10));
 
-        array = new TimesArray(Day, Month, Year, duration, numUsers);
     }
 
+    private void newEvent() {
+        emailsStr = emailsEntry.getText().toString().trim();
+        durationStr = durationEntry.getText().toString().trim();
+        dateStr = dateEntry.getText().toString().trim();
 
+        if(dateStr.isEmpty()){
+            dateEntry.setError("Start date is required!");
+            dateEntry.requestFocus();
+            return;
+        }
+        if(durationStr.isEmpty()){
+            durationEntry.setError("Duration is required!");
+            durationEntry.requestFocus();
+            return;
+        }
+        if(emailsStr.isEmpty()){
+            emailsEntry.setError("Email is required!");
+            emailsEntry.requestFocus();
+            return;
+        }
+
+        //Finding the number of total users using the number of emails inputed by the use
+        numUsers = 0;
+        for (int i = 0; i < emailsStr.length(); i++) {
+            if (emailsStr.charAt(i) == ',') {
+                numUsers++;
+            }
+        }
+
+        //the following statement is to make up for the fact that there is one more user than the number of comma
+        //the user enters in their email as well
+        numUsers++;
+        duration = Integer.parseInt(durationStr);
+        month = Integer.parseInt(dateStr.substring(0,2));
+        day = Integer.parseInt(dateStr.substring(3,5));
+        year = Integer.parseInt(dateStr.substring(6,10));
+
+        timeSheet = new TimesArray(day, month, year, duration, numUsers);
+
+
+        //startActivity(new Intent(CreateEvent.this, CalendarActivity.class));
+
+
+    }
 
 
 }
