@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Users {
     public int numUsers;
     public ArrayList<User> users;
+
     public Users(int numUsers) {
         users = new ArrayList<User>();
         this.numUsers = numUsers;
