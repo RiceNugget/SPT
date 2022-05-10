@@ -72,7 +72,7 @@ public class CreateEvent extends AppCompatActivity implements View.OnClickListen
         dateStr = dateEntry.getText().toString().trim();
 
         if (eventNameStr.isEmpty()) {
-            eventNameEntry.setError("Start date is required!");
+            eventNameEntry.setError("Event name is required!");
             eventNameEntry.requestFocus();
             return;
         }

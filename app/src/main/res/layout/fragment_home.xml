@@ -2,6 +2,51 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+<!--
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#457B9D"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:layout_constraintEnd_toEndOf="parent"
+        android:layout_constraintStart_toStartOf="parent"
+        android:layout_constraintTop_toTopOf="parent"
+        android:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
+    </androidx.appcompat.widget.Toolbar>
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:text="Crosschecker"
+        android:textSize="25sp"
+        android:translationX="80dp"
+        android:translationY="120dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView2"
+        android:layout_marginStart="5dp"
+        android:text="Dates:"
+        android:textSize="20sp"
+        android:translationX="120dp"
+        android:translationY="180dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView3"
+        android:layout_marginStart="-5dp"
+        android:fontFamily="monospace"
+        android:text="5 people available on mm/dd/yyyy"
+        android:translationX="120dp"
+        android:translationY="220dp" />
+        -->
 </RelativeLayout>

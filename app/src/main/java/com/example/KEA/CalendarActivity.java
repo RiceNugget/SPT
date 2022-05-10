@@ -25,7 +25,7 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
 
     private DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
     private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-    private String uid = user.getUid();
+    //private String uid = user.getUid();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

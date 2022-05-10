@@ -67,6 +67,7 @@ public class HolyShit extends AppCompatActivity implements NavigationView.OnNavi
 
             case R.id.nav_logout:
                 //signOut();
+                startActivity(new Intent(HolyShit.this,MainActivity.class));
                 break;
         }
 
@@ -90,6 +91,10 @@ public class HolyShit extends AppCompatActivity implements NavigationView.OnNavi
                 break;
 
         }
+    }
+
+    public void signOut(){
+
     }
 }
 
