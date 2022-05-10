@@ -68,8 +68,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.signInButton:
-               //userLogin();
-                startActivity((new Intent (this, HolyShit.class)));
+               userLogin();
+                //startActivity((new Intent (this, HolyShit.class)));
                 break;
 
             case R.id.welcomeMessage:

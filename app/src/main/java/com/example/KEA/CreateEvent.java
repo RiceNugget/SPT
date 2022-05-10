@@ -2,6 +2,7 @@ package com.example.KEA;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,18 +22,19 @@ import java.util.List;
 
 public class CreateEvent extends AppCompatActivity implements View.OnClickListener {
     public int numUsers, duration, month, day, year;
+    DateAvail testDate = new DateAvail("05", "11", "2022");
 
-    public TimesArray timeSheet;
-
-    String eventNameStr, emailsStr, durationStr, dateStr;
+    private String eventNameStr, emailsStr, durationStr, dateStr;
 
     private EditText eventNameEntry, emailsEntry, durationEntry, dateEntry;
 
     private Button createEventButton;
 
-    private DatabaseReference databaseReference;
+    DatabaseReference databaseReference, databaseReference2;
 
     private Event event;
+
+    private List<DateAvail> listOfDates = new ArrayList<DateAvail>();
 
 
     @Override
@@ -40,8 +42,10 @@ public class CreateEvent extends AppCompatActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_event);
 
+        Log.d("Anh testing", "onCreate");
         createEventButton = findViewById(R.id.CreateEventButton);
         createEventButton.setOnClickListener(this);
+
 
         eventNameEntry = findViewById(R.id.enterEventName);
         emailsEntry = findViewById(R.id.enterEmailsInvite);
@@ -51,20 +55,38 @@ public class CreateEvent extends AppCompatActivity implements View.OnClickListen
     }
 
     public void onClick(View view) {
+        Log.d("Anh testing", "onClick");
         switch (view.getId()) {
             case (R.id.CreateEventButton):
+                Log.d("Anh testing", "in case");
                 newEvent();
                 //startActivity(new Intent(CreateEvent.this, CalendarActivity.class));
                 break;
-
-
         }
 
     }
 
     private void newEvent() {
+        Log.d("Anh testing", "in newEvent");
         FirebaseDatabase db = FirebaseDatabase.getInstance();
         databaseReference = db.getReference("Events");
+        databaseReference2 = db.getReference("Dates");
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        if(database == null){
+            Log.d("Anh testing", "database is null");
+        }
+        else{
+            Log.d("Anh testing", "database is not null");
+        }
+        DatabaseReference myRef = database.getReference("message");
+        if(myRef == null){
+            Log.d("Anh testing", "reference is null");
+        }
+        else{
+            Log.d("Anh testing", "reference is not null");
+        }
+        myRef.setValue("Hello, World!");
 
         eventNameStr = eventNameEntry.getText().toString().trim();
         emailsStr = emailsEntry.getText().toString().trim();
@@ -110,11 +132,21 @@ public class CreateEvent extends AppCompatActivity implements View.OnClickListen
 
         event = new Event(eventNameStr,dateStr,durationStr,emailsStr);
 
+        for (int i = 0; i < duration; i++){
+            listOfDates.add(new DateAvail("11", "22","4444"));
+        }
+
+
         databaseReference.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(event);
+        databaseReference2.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(listOfDates);
 
         Toast.makeText(CreateEvent.this,"Event created successfully",Toast.LENGTH_LONG);
         startActivity(new Intent(CreateEvent.this, CalendarActivity.class));
 
+        }
+
+        public String getEventDate(){
+        return dateStr;
         }
     }
 

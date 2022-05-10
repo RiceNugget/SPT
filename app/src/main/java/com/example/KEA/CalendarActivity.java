@@ -19,11 +19,18 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CalendarActivity extends AppCompatActivity implements View.OnClickListener {
     Button goHome, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19, b20, b21, b22, b23, b24, b25, b26, b27, b28, b29, b30, b31, b32;
-    DateAvail testDate = new DateAvail("05", "11", "2022");
 
-    private DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
+    List<Boolean> dateAvailCloud = new ArrayList<Boolean>();
+    Event event;
+
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference reference = database.getReference("Dates");
+    DatabaseReference reference2Events = database.getReference("Events");
     private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     //private String uid = user.getUid();
 
@@ -161,26 +168,25 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
         b31.setOnClickListener(this);
         busyButton(b31);
 
-        b32 = findViewById(R.id.availButton32);
-        b32.setOnClickListener(this);
-        busyButton(b32);
     }
 
-    @Override
-    public void onClick(View view) {
-      /*reference.child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
+    public void readDatabase(){
+        reference.child(uid).child("0").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                User userprof = snapshot.getValue(User.class);
-                if (userprof != null) {
-                    //available = userprof.available;
-                }
+                dateAvailCloud = snapshot.getValue(DateAvail.class).getAvailLists();
+                Log.d("ANH", "dateAvailCloud = " + dateAvailCloud.toString());
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 Toast.makeText(CalendarActivity.this, "Something went wrong", Toast.LENGTH_LONG).show();
             }
-        });*/
+        });
+    }
+
+    @Override
+    public void onClick(View view) {
 
         switch (view.getId()) {
             case R.id.goHome:
@@ -217,18 +223,19 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
                 changeButton(b10, 10);
                 break;
 
-
         }
 
     }
 
 
     public void changeButton(Button b, int i) {
-        //default to busy
+        readDatabase();
         //i is the number of the button
-        testDate.setAvailOfTime(i, !testDate.getAvailOfTime(i));
+        Boolean boo = dateAvailCloud.get(0);
+        dateAvailCloud.set(0,!boo);
+        reference.child(uid).child("0").child("availLists").child("0").setValue(true);
         //the boolean value is reversed when this method is called is because the method is named "changeButton"
-        if (testDate.getAvailOfTime(i)) {
+        if (dateAvailCloud.get(0)) {
             freeButton(b);
         } else {
             busyButton(b);
@@ -246,4 +253,6 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
         b.setBackgroundColor(Color.GREEN);
         b.setText("Free");
     }
+
+
 }
