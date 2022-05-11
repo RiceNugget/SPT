@@ -1,4 +1,4 @@
-package com.example.myapplication.;
+package com.example.KEA;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.myapplication.R;
 
 public class CreateEvent extends AppCompatActivity implements View.OnClickListener{
     public int numUsers;
@@ -41,9 +43,8 @@ public class CreateEvent extends AppCompatActivity implements View.OnClickListen
                     if (EmailsEntered.charAt(i) == ',') {
                         numUsers++;
                     }
-
-
                 }
+                break;
         }
         numUsers++;
         //needs this last statement because there is 1 more user than commas.
@@ -58,8 +59,4 @@ public class CreateEvent extends AppCompatActivity implements View.OnClickListen
 
         array = new TimesArray(Day, Month, Year, duration, numUsers);
     }
-
-
-
-
 }

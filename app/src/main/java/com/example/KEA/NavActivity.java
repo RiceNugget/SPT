@@ -4,6 +4,8 @@ package com.example.KEA;
 
         import androidx.appcompat.app.AppCompatActivity;
 
+        import com.example.myapplication.R;
+
 public class NavActivity extends AppCompatActivity {
 
     @Override

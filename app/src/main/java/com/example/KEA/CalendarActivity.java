@@ -9,6 +9,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.myapplication.R;
+
 public class CalendarActivity extends AppCompatActivity implements View.OnClickListener {
     Button goHome, availab;
     Boolean available = true;
@@ -38,7 +40,7 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
 
     public void changeButton() {
         available = !available;
-        Log.d("anh2", "in changeAvailbility");
+        Log.d("anh2", "in changeAvailability");
         if (available) {
             availab.setBackgroundColor(Color.GREEN);
             availab.setText("Available");
