@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -88,8 +87,7 @@ public class HolyShit extends AppCompatActivity implements NavigationView.OnNavi
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.createEventButton:
-                Log.d("HolyShit-CreateEvent","before switching to CreateEvent from HolyShit");
-                startActivity(new Intent(HolyShit.this,CreateEvent.class));
+                startActivity(new Intent(this,CreateEvent.class));
                 break;
 
         }

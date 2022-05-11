@@ -42,7 +42,7 @@ public class CalendarsFragment extends Fragment implements View.OnClickListener{
 
     @Override
     public void onClick(View view) {
-        Log.d("anh2", "in onClick");
+        /*Log.d("anh2", "in onClick");
         reference.child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -55,7 +55,7 @@ public class CalendarsFragment extends Fragment implements View.OnClickListener{
             public void onCancelled(@NonNull DatabaseError error) {
                 Toast.makeText(getContext(), "Something went wrong", Toast.LENGTH_LONG).show();
             }
-        });
+        });*/
 
         switch (view.getId()) {
             case R.id.availButton1:
@@ -64,6 +64,7 @@ public class CalendarsFragment extends Fragment implements View.OnClickListener{
         }
     }
     public void changeButton(View v) {
+
         Button availButton = v.findViewById(R.id.availButton1);
         Log.d("anh2", "in changeAvailbility");
         if (available) {

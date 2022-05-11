@@ -23,8 +23,8 @@
 
     <Button
         android:id="@+id/goHome"
-        android:layout_width="407dp"
-        android:layout_height="53dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
         android:layout_marginEnd="4dp"
         android:text="go Home"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -33,9 +33,13 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         tools:context=".CalendarsFragment"
         >
+    <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <TableLayout
             android:layout_width="match_parent"
@@ -47,6 +51,7 @@
             <TableRow android:background="@color/theme">
 
                 <TextView
+                    android:id="@+id/date"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
@@ -179,10 +184,10 @@
                     android:textSize="14sp"></TextView>
 
                 <Button
+                    android:id="@+id/availButton3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
-                    android:backgroundTint="@color/red"
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
@@ -216,10 +221,10 @@
                     android:textSize="14sp"></TextView>
 
                 <Button
+                    android:id="@+id/availButton4"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
-                    android:backgroundTint="@color/red"
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
@@ -253,10 +258,10 @@
                     android:textSize="14sp"></TextView>
 
                 <Button
+                    android:id="@+id/availButton5"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
-                    android:backgroundTint="@color/red"
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
@@ -290,10 +295,10 @@
                     android:textSize="14sp"></TextView>
 
                 <Button
+                    android:id="@+id/availButton6"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
-                    android:backgroundTint="@color/red"
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
@@ -327,10 +332,10 @@
                     android:textSize="14sp"></TextView>
 
                 <Button
+                    android:id="@+id/availButton7"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
-                    android:backgroundTint="@color/red"
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
@@ -364,10 +369,10 @@
                     android:textSize="14sp"></TextView>
 
                 <Button
+                    android:id="@+id/availButton8"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
-                    android:backgroundTint="@color/red"
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
@@ -401,10 +406,10 @@
                     android:textSize="14sp"></TextView>
 
                 <Button
+                    android:id="@+id/availButton9"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
-                    android:backgroundTint="@color/red"
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
@@ -438,10 +443,10 @@
                     android:textSize="14sp"></TextView>
 
                 <Button
+                    android:id="@+id/availButton10"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
-                    android:backgroundTint="@color/red"
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
@@ -475,10 +480,10 @@
                     android:textSize="14sp"></TextView>
 
                 <Button
+                    android:id="@+id/availButton11"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
-                    android:backgroundTint="@color/red"
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
@@ -512,10 +517,10 @@
                     android:textSize="14sp"></TextView>
 
                 <Button
+                    android:id="@+id/availButton12"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
-                    android:backgroundTint="@color/red"
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
@@ -549,10 +554,10 @@
                     android:textSize="14sp"></TextView>
 
                 <Button
+                    android:id="@+id/availButton13"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
-                    android:backgroundTint="@color/red"
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
@@ -586,10 +591,10 @@
                     android:textSize="14sp"></TextView>
 
                 <Button
+                    android:id="@+id/availButton14"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
-                    android:backgroundTint="@color/red"
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
@@ -623,10 +628,10 @@
                     android:textSize="14sp"></TextView>
 
                 <Button
+                    android:id="@+id/availButton15"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
-                    android:backgroundTint="@color/red"
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
@@ -660,10 +665,10 @@
                     android:textSize="14sp"></TextView>
 
                 <Button
+                    android:id="@+id/availButton16"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
-                    android:backgroundTint="@color/red"
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
@@ -697,10 +702,10 @@
                     android:textSize="14sp"></TextView>
 
                 <Button
+                    android:id="@+id/availButton17"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
-                    android:backgroundTint="@color/red"
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
@@ -734,10 +739,10 @@
                     android:textSize="14sp"></TextView>
 
                 <Button
+                    android:id="@+id/availButton18"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
-                    android:backgroundTint="@color/red"
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
@@ -771,10 +776,10 @@
                     android:textSize="14sp"></TextView>
 
                 <Button
+                    android:id="@+id/availButton19"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
-                    android:backgroundTint="@color/red"
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
@@ -808,10 +813,10 @@
                     android:textSize="14sp"></TextView>
 
                 <Button
+                    android:id="@+id/availButton20"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
-                    android:backgroundTint="@color/red"
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
@@ -845,10 +850,10 @@
                     android:textSize="14sp"></TextView>
 
                 <Button
+                    android:id="@+id/availButton21"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
-                    android:backgroundTint="@color/red"
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
@@ -882,10 +887,10 @@
                     android:textSize="14sp"></TextView>
 
                 <Button
+                    android:id="@+id/availButton22"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
-                    android:backgroundTint="@color/red"
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
@@ -919,10 +924,10 @@
                     android:textSize="14sp"></TextView>
 
                 <Button
+                    android:id="@+id/availButton23"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
-                    android:backgroundTint="@color/red"
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
@@ -956,10 +961,10 @@
                     android:textSize="14sp"></TextView>
 
                 <Button
+                    android:id="@+id/availButton24"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
-                    android:backgroundTint="@color/red"
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
@@ -993,10 +998,10 @@
                     android:textSize="14sp"></TextView>
 
                 <Button
+                    android:id="@+id/availButton25"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
-                    android:backgroundTint="@color/red"
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
@@ -1030,10 +1035,10 @@
                     android:textSize="14sp"></TextView>
 
                 <Button
+                    android:id="@+id/availButton26"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
-                    android:backgroundTint="@color/red"
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
@@ -1067,10 +1072,10 @@
                     android:textSize="14sp"></TextView>
 
                 <Button
+                    android:id="@+id/availButton27"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
-                    android:backgroundTint="@color/red"
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
@@ -1104,10 +1109,10 @@
                     android:textSize="14sp"></TextView>
 
                 <Button
+                    android:id="@+id/availButton28"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
-                    android:backgroundTint="@color/red"
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
@@ -1141,10 +1146,10 @@
                     android:textSize="14sp"></TextView>
 
                 <Button
+                    android:id="@+id/availButton29"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
-                    android:backgroundTint="@color/red"
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
@@ -1178,10 +1183,10 @@
                     android:textSize="14sp"></TextView>
 
                 <Button
+                    android:id="@+id/availButton30"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
-                    android:backgroundTint="@color/red"
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
@@ -1215,10 +1220,10 @@
                     android:textSize="14sp"></TextView>
 
                 <Button
+                    android:id="@+id/availButton31"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
-                    android:backgroundTint="@color/red"
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
@@ -1229,42 +1234,29 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/set_date"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"></TextView>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/nine_thirty_PM_block"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"></TextView>
-
+                android:layout_height="match_parent" >
                 <Button
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
                     android:layout_weight="4"
-                    android:backgroundTint="@color/red"
-                    android:gravity="center_horizontal"
                     android:padding="10sp"
-                    android:text="@string/busy_button"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"></Button>
-
+                    android:text="Save and CrossCheck"
+                    android:textColor="@color/black"
+                    />
             </TableRow>
 
         </TableLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            app:srcCompat="@drawable/ic_home" />
+
+
+    </LinearLayout>
     </ScrollView>
 
 
