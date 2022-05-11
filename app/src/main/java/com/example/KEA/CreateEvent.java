@@ -72,22 +72,6 @@ public class CreateEvent extends AppCompatActivity implements View.OnClickListen
         databaseReference = db.getReference("Events");
         databaseReference2 = db.getReference("Dates");
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        if(database == null){
-            Log.d("Anh testing", "database is null");
-        }
-        else{
-            Log.d("Anh testing", "database is not null");
-        }
-        DatabaseReference myRef = database.getReference("message");
-        if(myRef == null){
-            Log.d("Anh testing", "reference is null");
-        }
-        else{
-            Log.d("Anh testing", "reference is not null");
-        }
-        myRef.setValue("Hello, World!");
-
         eventNameStr = eventNameEntry.getText().toString().trim();
         emailsStr = emailsEntry.getText().toString().trim();
         durationStr = durationEntry.getText().toString().trim();

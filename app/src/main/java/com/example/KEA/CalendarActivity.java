@@ -27,6 +27,7 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
 
     List<Boolean> dateAvailCloud = new ArrayList<Boolean>();
     Event event;
+    Boolean timeSlotAvail = false;
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference reference = database.getReference("Dates");
@@ -170,11 +171,21 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
 
     }
 
-    public void readDatabase(){
-        reference.child(uid).child("0").addValueEventListener(new ValueEventListener() {
+    /*public void readDatabase(){
+        Log.d("ANH", "in readDatabase");
+        Log.d("ANH","Reference child uid 0  " + reference.child(uid).child("0").child("availLists"));
+        Log.d("ANH","Reference child uid 0  " + reference.child(uid).child("0").child("availLists").child("0"));
+        reference.child(uid).child("0").child("availLists").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                dateAvailCloud = snapshot.getValue(DateAvail.class).getAvailLists();
+               dateAvailCloud.clear();
+                Log.d("ANH", "in data Change");
+
+
+
+                for (DataSnapshot boo : snapshot.getChildren()){
+                    dateAvailCloud.add(boo.getValue(Boolean.class));
+                }
                 Log.d("ANH", "dateAvailCloud = " + dateAvailCloud.toString());
             }
 
@@ -183,7 +194,7 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
                 Toast.makeText(CalendarActivity.this, "Something went wrong", Toast.LENGTH_LONG).show();
             }
         });
-    }
+    }*/
 
     @Override
     public void onClick(View view) {
@@ -222,20 +233,84 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
             case R.id.availButton10:
                 changeButton(b10, 10);
                 break;
-
+            case R.id.availButton11:
+                changeButton(b11, 11);
+                break;
+            case R.id.availButton12:
+                changeButton(b12, 12);
+                break;
+            case R.id.availButton13:
+                changeButton(b13, 13);
+                break;
+            case R.id.availButton14:
+                changeButton(b14, 14);
+                break;
+            case R.id.availButton15:
+                changeButton(b15, 15);
+                break;
+            case R.id.availButton16:
+                changeButton(b16, 16);
+                break;
+            case R.id.availButton17:
+                changeButton(b17, 17);
+                break;
+            case R.id.availButton18:
+                changeButton(b18, 18);
+                break;
+            case R.id.availButton19:
+                changeButton(b19, 19);
+                break;
+            case R.id.availButton20:
+                changeButton(b20, 20);
+                break;
+            case R.id.availButton21:
+                changeButton(b21, 21);
+                break;
+            case R.id.availButton22:
+                changeButton(b22, 22);
+                break;
+            case R.id.availButton23:
+                changeButton(b23, 23);
+                break;
+            case R.id.availButton24:
+                changeButton(b24, 24);
+                break;
+            case R.id.availButton25:
+                changeButton(b25, 25);
+                break;
+            case R.id.availButton26:
+                changeButton(b26, 26);
+                break;
+            case R.id.availButton27:
+                changeButton(b27, 27);
+                break;
+            case R.id.availButton28:
+                changeButton(b28, 28);
+                break;
+            case R.id.availButton29:
+                changeButton(b29, 29);
+                break;
+            case R.id.availButton30:
+                changeButton(b30, 30);
+                break;
+            case R.id.availButton31:
+                changeButton(b31, 31);
+                break;
         }
 
     }
 
 
     public void changeButton(Button b, int i) {
-        readDatabase();
-        //i is the number of the button
-        Boolean boo = dateAvailCloud.get(0);
-        dateAvailCloud.set(0,!boo);
-        reference.child(uid).child("0").child("availLists").child("0").setValue(true);
+       //i is the number of the button, and correlates with the i-1 on the arrayList
+        String iAltStr = Integer.toString(i-1);
+
+        reference.child(uid).child("0").child("availLists").child(iAltStr).setValue(!timeSlotAvail);
+        timeSlotAvail = !timeSlotAvail;
+
+
         //the boolean value is reversed when this method is called is because the method is named "changeButton"
-        if (dateAvailCloud.get(0)) {
+        if (timeSlotAvail) {
             freeButton(b);
         } else {
             busyButton(b);
