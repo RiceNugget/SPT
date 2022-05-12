@@ -24,6 +24,7 @@ import java.util.List;
 
 public class CalendarActivity extends AppCompatActivity implements View.OnClickListener {
     Button goHome1, goHome2, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19, b20, b21, b22, b23, b24, b25, b26, b27, b28, b29, b30, b31, b32,goNext1,goNext2;
+    private String date;
 
     List<Boolean> dateAvailCloud = new ArrayList<Boolean>();
     Event event;
@@ -39,7 +40,8 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
-
+        date = reference.child(uid).child("1").child("Vmxg4F1huNWmtUmLVbIe2CYV8Wl2").child("startDate").toString();
+        Log.d("test69", date);
 
         goHome1 = findViewById(R.id.goHome1);
         goHome1.setOnClickListener(this);

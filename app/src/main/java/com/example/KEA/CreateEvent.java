@@ -98,7 +98,7 @@ public class CreateEvent extends AppCompatActivity implements View.OnClickListen
             return;
         }
 
-        //Finding the number of total users using the number of emails inputed by the use
+        //Finding the number of total users using the number of emails inputted by the use
         numUsers = 0;
         for (int i = 0; i < emailsStr.length(); i++) {
             if (emailsStr.charAt(i) == ',') {
