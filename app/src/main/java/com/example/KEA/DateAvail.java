@@ -15,6 +15,7 @@ public class DateAvail {
         availLists = new ArrayList<Boolean>();
         //Populating an array of false time spots
        /* for (int i = 0; i < 32; i++){
+
             availArray[i] = false;
         }*/
         for (int i = 0; i < 32; i++){

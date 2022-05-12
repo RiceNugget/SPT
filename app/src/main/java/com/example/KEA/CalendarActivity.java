@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -28,6 +29,7 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
     List<Boolean> dateAvailCloud = new ArrayList<Boolean>();
     Event event;
     Boolean timeSlotAvail = false;
+    String date = "";
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference reference = database.getReference("Dates");
@@ -37,6 +39,11 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Task<DataSnapshot> task = reference.child("Events").get();
+        DataSnapshot ds =   reference.child(uid).child("0").child("1").child("0");
+        Event event = ds.getValue(Event.class);
+        String sharedEmailsFB = event.getSharedEmails();
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
 

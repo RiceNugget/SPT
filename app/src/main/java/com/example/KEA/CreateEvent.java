@@ -11,7 +11,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.myapplication.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -23,7 +22,7 @@ import java.util.List;
 
 public class CreateEvent extends AppCompatActivity implements View.OnClickListener {
     public int numUsers, duration, month, day, year;
-    DateAvail testDate = new DateAvail("05", "11", "2022");
+    DateAvail testDate = new DateAvail(Integer.toString(month), Integer.toString(day), Integer.toString(year));
 
     private String eventNameStr, emailsStr, durationStr, dateStr;
 

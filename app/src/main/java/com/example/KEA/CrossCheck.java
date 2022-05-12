@@ -31,7 +31,5 @@ public class CrossCheck extends android.app.Activity{
         }
     }
     public CrossCheck() {
-
-
     }
 }
