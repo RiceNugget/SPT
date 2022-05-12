@@ -46,6 +46,10 @@
             app:srcCompat="@drawable/ic_add"
             tools:ignore="ImageContrastCheck,ImageContrastCheck" />
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
     </RelativeLayout>
 
     <com.google.android.material.navigation.NavigationView

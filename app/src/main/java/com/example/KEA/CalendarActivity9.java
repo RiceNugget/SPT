@@ -1,29 +1,23 @@
 package com.example.KEA;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CalendarActivity extends AppCompatActivity implements View.OnClickListener {
-    Button goHome1, goHome2, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19, b20, b21, b22, b23, b24, b25, b26, b27, b28, b29, b30, b31, b32,goNext1,goNext2;
+public class CalendarActivity9 extends AppCompatActivity implements View.OnClickListener {
+    Button goHome1, goHome2, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19, b20, b21, b22, b23, b24, b25, b26, b27, b28, b29, b30, b31, b32,goNext1,goNext2,goPrevious1,goPrevious2;
 
     List<Boolean> dateAvailCloud = new ArrayList<Boolean>();
     Event event;
@@ -38,7 +32,7 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calendar);
+        setContentView(R.layout.activity_calendar9);
 
 
         goHome1 = findViewById(R.id.goHome1);
@@ -52,6 +46,12 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
 
         goNext2 = findViewById(R.id.goNext2);
         goNext2.setOnClickListener(this);
+
+        goPrevious1 = findViewById(R.id.goPrevious1);
+        goPrevious1.setOnClickListener(this);
+
+        goPrevious2 = findViewById(R.id.goPrevious2);
+        goPrevious2.setOnClickListener(this);
 
         b1 = findViewById(R.id.availButton1);
         b1.setOnClickListener(this);
@@ -180,6 +180,30 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
 
     }
 
+    /*public void readDatabase(){
+        Log.d("ANH", "in readDatabase");
+        Log.d("ANH","Reference child uid 0  " + reference.child(uid).child("0").child("availLists"));
+        Log.d("ANH","Reference child uid 0  " + reference.child(uid).child("0").child("availLists").child("0"));
+        reference.child(uid).child("0").child("availLists").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+               dateAvailCloud.clear();
+                Log.d("ANH", "in data Change");
+
+
+
+                for (DataSnapshot boo : snapshot.getChildren()){
+                    dateAvailCloud.add(boo.getValue(Boolean.class));
+                }
+                Log.d("ANH", "dateAvailCloud = " + dateAvailCloud.toString());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(CalendarActivity.this, "Something went wrong", Toast.LENGTH_LONG).show();
+            }
+        });
+    }*/
 
     @Override
     public void onClick(View view) {
@@ -284,7 +308,12 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.goNext1:
             case R.id.goNext2:
-                startActivity(new Intent(this, CalendarActivity2.class));
+                startActivity(new Intent(this, CalendarActivity10.class));
+                break;
+            case R.id.goPrevious1:
+            case R.id.goPrevious2:
+                startActivity(new Intent(this, CalendarActivity8.class));
+                break;
         }
 
     }
