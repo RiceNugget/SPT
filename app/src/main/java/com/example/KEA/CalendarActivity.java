@@ -171,30 +171,6 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
 
     }
 
-    /*public void readDatabase(){
-        Log.d("ANH", "in readDatabase");
-        Log.d("ANH","Reference child uid 0  " + reference.child(uid).child("0").child("availLists"));
-        Log.d("ANH","Reference child uid 0  " + reference.child(uid).child("0").child("availLists").child("0"));
-        reference.child(uid).child("0").child("availLists").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-               dateAvailCloud.clear();
-                Log.d("ANH", "in data Change");
-
-
-
-                for (DataSnapshot boo : snapshot.getChildren()){
-                    dateAvailCloud.add(boo.getValue(Boolean.class));
-                }
-                Log.d("ANH", "dateAvailCloud = " + dateAvailCloud.toString());
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(CalendarActivity.this, "Something went wrong", Toast.LENGTH_LONG).show();
-            }
-        });
-    }*/
 
     @Override
     public void onClick(View view) {
