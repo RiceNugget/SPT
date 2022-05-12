@@ -64,7 +64,6 @@ public class CalendarsFragment extends Fragment implements View.OnClickListener{
         }
     }
     public void changeButton(View v) {
-
         Button availButton = v.findViewById(R.id.availButton1);
         Log.d("anh2", "in changeAvailbility");
         if (available) {

@@ -10,14 +10,11 @@ public class DateAvail {
     public List<Boolean>availLists;
     //public Boolean[] availArray;
 
-    public DateAvail(String month, String day, String year){
-       // availArray =  new Boolean[32];
+    public DateAvail(int month,int day, int year){
+        this.month = month;
+        this.day = day;
+        this.year = year;
         availLists = new ArrayList<Boolean>();
-        //Populating an array of false time spots
-       /* for (int i = 0; i < 32; i++){
-
-            availArray[i] = false;
-        }*/
         for (int i = 0; i < 32; i++){
             availLists.add(false);
         }
