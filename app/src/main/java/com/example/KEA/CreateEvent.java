@@ -22,30 +22,27 @@ import java.util.List;
 
 public class CreateEvent extends AppCompatActivity implements View.OnClickListener {
     public int numUsers, duration, month, day, year;
-    DateAvail testDate = new DateAvail("05", "11", "2022");
-
     private String eventNameStr, emailsStr, durationStr, dateStr;
-
     private EditText eventNameEntry, emailsEntry, durationEntry, dateEntry;
-
     private Button createEventButton;
-
     DatabaseReference databaseReference, databaseReference2;
-
     private Event event;
-
     private List<DateAvail> listOfDates = new ArrayList<DateAvail>();
 
+
+    public CreateEvent(String eventNameStr,String durationStr, String dateStr){
+        this.eventNameStr = eventNameStr;
+        this.durationStr = durationStr;
+        this.dateStr = dateStr;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_event);
 
-        Log.d("Anh testing", "onCreate");
         createEventButton = findViewById(R.id.CreateEventButton);
         createEventButton.setOnClickListener(this);
-
 
         eventNameEntry = findViewById(R.id.enterEventName);
         emailsEntry = findViewById(R.id.enterEmailsInvite);
@@ -55,19 +52,15 @@ public class CreateEvent extends AppCompatActivity implements View.OnClickListen
     }
 
     public void onClick(View view) {
-        Log.d("Anh testing", "onClick");
         switch (view.getId()) {
             case (R.id.CreateEventButton):
-                Log.d("Anh testing", "in case");
                 newEvent();
-                //startActivity(new Intent(CreateEvent.this, CalendarActivity.class));
                 break;
         }
 
     }
 
-    private void newEvent() {
-        Log.d("Anh testing", "in newEvent");
+    public void newEvent() {
         FirebaseDatabase db = FirebaseDatabase.getInstance();
         databaseReference = db.getReference("Events");
         databaseReference2 = db.getReference("Dates");
@@ -98,17 +91,17 @@ public class CreateEvent extends AppCompatActivity implements View.OnClickListen
             return;
         }
 
-        //Finding the number of total users using the number of emails inputed by the use
+        //Finding the number of total users using the number of emails inputed by the user
         numUsers = 0;
         for (int i = 0; i < emailsStr.length(); i++) {
             if (emailsStr.charAt(i) == ',') {
                 numUsers++;
             }
         }
-
         //the following statement is to make up for the fact that there is one more user than the number of comma
         //the user enters in their email as well
         numUsers++;
+
         duration = Integer.parseInt(durationStr);
         month = Integer.parseInt(dateStr.substring(0, 2));
         day = Integer.parseInt(dateStr.substring(3, 5));
@@ -117,9 +110,8 @@ public class CreateEvent extends AppCompatActivity implements View.OnClickListen
         event = new Event(eventNameStr,dateStr,durationStr,emailsStr);
 
         for (int i = 0; i < duration; i++){
-            listOfDates.add(new DateAvail("11", "22","4444"));
+            listOfDates.add(new DateAvail(month, day+ i,year));
         }
-
 
         databaseReference.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(event);
         databaseReference2.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(listOfDates);
@@ -128,6 +120,28 @@ public class CreateEvent extends AppCompatActivity implements View.OnClickListen
         startActivity(new Intent(CreateEvent.this, CalendarActivity.class));
 
         }
+
+    public void newEventForReceiver() {
+        FirebaseDatabase db = FirebaseDatabase.getInstance();
+        databaseReference = db.getReference("Events");
+        databaseReference2 = db.getReference("Dates");
+
+        duration = Integer.parseInt(durationStr);
+        month = Integer.parseInt(dateStr.substring(0, 2));
+        day = Integer.parseInt(dateStr.substring(3, 5));
+        year = Integer.parseInt(dateStr.substring(6, 10));
+
+        event = new Event(eventNameStr,dateStr,durationStr,emailsStr);
+
+        for (int i = 0; i < duration; i++){
+            listOfDates.add(new DateAvail(month, day+ i, year));
+        }
+
+        databaseReference.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(event);
+        databaseReference2.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(listOfDates);
+
+
+    }
 
         public String getEventDate(){
         return dateStr;
