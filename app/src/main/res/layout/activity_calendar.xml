@@ -26,7 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginEnd="4dp"
-        android:text="go Home"
+        android:text="@string/go_home"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -38,7 +38,7 @@
         >
     <LinearLayout
        android:layout_width="match_parent"
-       android:layout_height="match_parent"
+       android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <TableLayout
@@ -67,7 +67,7 @@
                     android:layout_weight="4"
                     android:gravity="center_horizontal"
                     android:padding="10sp"
-                    android:text="Time"
+                    android:text="@string/time"
                     android:textColor="@color/design_default_color_background"
                     android:textSize="14sp"></TextView>
 
@@ -115,9 +115,9 @@
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
-                    android:textColor="@color/white"
+                    android:textColor="#000000"
                     android:textSize="14sp"
-                    tools:ignore="TextContrastCheck"></Button>
+                    tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck"></Button>
 
             </TableRow>
 
@@ -153,9 +153,9 @@
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
-                    android:textColor="@color/white"
+                    android:textColor="#000000"
                     android:textSize="14sp"
-                    tools:ignore="TextContrastCheck"></Button>
+                    tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck"></Button>
 
             </TableRow>
 
@@ -191,8 +191,9 @@
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"></Button>
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    tools:ignore="DuplicateSpeakableTextCheck"></Button>
 
             </TableRow>
 
@@ -228,7 +229,7 @@
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
-                    android:textColor="@color/white"
+                    android:textColor="#000000"
                     android:textSize="14sp"></Button>
 
             </TableRow>
@@ -265,8 +266,9 @@
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"></Button>
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    tools:ignore="DuplicateSpeakableTextCheck"></Button>
 
             </TableRow>
 
@@ -302,7 +304,7 @@
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
-                    android:textColor="@color/white"
+                    android:textColor="#000000"
                     android:textSize="14sp"></Button>
 
             </TableRow>
@@ -339,8 +341,9 @@
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"></Button>
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    tools:ignore="DuplicateSpeakableTextCheck"></Button>
 
             </TableRow>
 
@@ -376,8 +379,9 @@
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"></Button>
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    tools:ignore="DuplicateSpeakableTextCheck"></Button>
 
             </TableRow>
 
@@ -413,7 +417,7 @@
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
-                    android:textColor="@color/white"
+                    android:textColor="#000000"
                     android:textSize="14sp"></Button>
 
             </TableRow>
@@ -450,7 +454,7 @@
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
-                    android:textColor="@color/white"
+                    android:textColor="#000000"
                     android:textSize="14sp"></Button>
 
             </TableRow>
@@ -487,7 +491,7 @@
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
-                    android:textColor="@color/white"
+                    android:textColor="#000000"
                     android:textSize="14sp"></Button>
 
             </TableRow>
@@ -524,8 +528,9 @@
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"></Button>
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    tools:ignore="TextContrastCheck"></Button>
 
             </TableRow>
 
@@ -561,7 +566,7 @@
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
-                    android:textColor="@color/white"
+                    android:textColor="#000000"
                     android:textSize="14sp"></Button>
 
             </TableRow>
@@ -598,8 +603,9 @@
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"></Button>
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    tools:ignore="DuplicateSpeakableTextCheck"></Button>
 
             </TableRow>
 
@@ -635,7 +641,7 @@
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
-                    android:textColor="@color/white"
+                    android:textColor="#000000"
                     android:textSize="14sp"></Button>
 
             </TableRow>
@@ -672,7 +678,7 @@
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
-                    android:textColor="@color/white"
+                    android:textColor="#000000"
                     android:textSize="14sp"></Button>
 
             </TableRow>
@@ -709,7 +715,7 @@
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
-                    android:textColor="@color/white"
+                    android:textColor="#000000"
                     android:textSize="14sp"></Button>
 
             </TableRow>
@@ -746,7 +752,7 @@
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
-                    android:textColor="@color/white"
+                    android:textColor="#000000"
                     android:textSize="14sp"></Button>
 
             </TableRow>
@@ -783,8 +789,9 @@
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"></Button>
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    tools:ignore="DuplicateSpeakableTextCheck"></Button>
 
             </TableRow>
 
@@ -820,8 +827,9 @@
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"></Button>
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    tools:ignore="DuplicateSpeakableTextCheck"></Button>
 
             </TableRow>
 
@@ -857,8 +865,9 @@
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"></Button>
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    tools:ignore="DuplicateSpeakableTextCheck"></Button>
 
             </TableRow>
 
@@ -894,7 +903,7 @@
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
-                    android:textColor="@color/white"
+                    android:textColor="#000000"
                     android:textSize="14sp"></Button>
 
             </TableRow>
@@ -931,7 +940,7 @@
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
-                    android:textColor="@color/white"
+                    android:textColor="#000000"
                     android:textSize="14sp"></Button>
 
             </TableRow>
@@ -968,7 +977,7 @@
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
-                    android:textColor="@color/white"
+                    android:textColor="#000000"
                     android:textSize="14sp"></Button>
 
             </TableRow>
@@ -1005,7 +1014,7 @@
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
-                    android:textColor="@color/white"
+                    android:textColor="#000000"
                     android:textSize="14sp"></Button>
 
             </TableRow>
@@ -1042,7 +1051,7 @@
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
-                    android:textColor="@color/white"
+                    android:textColor="#000000"
                     android:textSize="14sp"></Button>
 
             </TableRow>
@@ -1079,7 +1088,7 @@
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
-                    android:textColor="@color/white"
+                    android:textColor="#000000"
                     android:textSize="14sp"></Button>
 
             </TableRow>
@@ -1116,7 +1125,7 @@
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
-                    android:textColor="@color/white"
+                    android:textColor="#000000"
                     android:textSize="14sp"></Button>
 
             </TableRow>
@@ -1153,7 +1162,7 @@
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
-                    android:textColor="@color/white"
+                    android:textColor="#000000"
                     android:textSize="14sp"></Button>
 
             </TableRow>
@@ -1190,7 +1199,7 @@
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
-                    android:textColor="@color/white"
+                    android:textColor="#000000"
                     android:textSize="14sp"></Button>
 
             </TableRow>
@@ -1227,7 +1236,7 @@
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/busy_button"
-                    android:textColor="@color/white"
+                    android:textColor="#000000"
                     android:textSize="14sp"></Button>
 
             </TableRow>
@@ -1240,7 +1249,7 @@
                     android:layout_width="match_parent"
                     android:layout_weight="4"
                     android:padding="10sp"
-                    android:text="Save and CrossCheck"
+                    android:text="@string/save_and_crosscheck"
                     android:textColor="@color/black"
                     />
             </TableRow>
@@ -1250,10 +1259,12 @@
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/floatingActionButton"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_weight="1"
             android:clickable="true"
-            app:srcCompat="@drawable/ic_home" />
+            android:contentDescription="@string/go_home"
+            app:srcCompat="@drawable/ic_home"
+            android:focusable="true" />
 
 
     </LinearLayout>
