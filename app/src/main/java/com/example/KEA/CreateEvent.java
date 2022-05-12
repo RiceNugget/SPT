@@ -29,6 +29,9 @@ public class CreateEvent extends AppCompatActivity implements View.OnClickListen
     private Event event;
     private List<DateAvail> listOfDates = new ArrayList<DateAvail>();
 
+    public CreateEvent(){
+
+    }
 
     public CreateEvent(String eventNameStr,String durationStr, String dateStr){
         this.eventNameStr = eventNameStr;
