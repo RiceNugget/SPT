@@ -32,9 +32,49 @@
             android:exported="false"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:name=".CalendarActivity2"
+            android:exported="true" />
+        <activity
+            android:name=".CalendarActivity3"
+            android:exported="true"/>
+        <activity
+            android:name=".CalendarActivity4"
+            android:exported="true"/>
+        <activity
+            android:name=".CalendarActivity5"
+            android:exported="true"/>
+        <activity
+            android:name=".CalendarActivity6"
+            android:exported="true"/>
+        <activity
+            android:name=".CalendarActivity7"
+            android:exported="true"/>
+        <activity
+            android:name=".CalendarActivity8"
+            android:exported="true"/>
+        <activity
+            android:name=".CalendarActivity9"
+            android:exported="true"/>
+        <activity
+            android:name=".CalendarActivity10"
+            android:exported="true"/>
+        <activity
+            android:name=".CalendarActivity11"
+            android:exported="true"/>
+        <activity
+            android:name=".CalendarActivity12"
+            android:exported="true"/>
+        <activity
+            android:name=".CalendarActivity13"
+            android:exported="true"/>
+        <activity
+            android:name=".CalendarActivity14"
+            android:exported="true"/>
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/AppTheme.NoActionBar">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

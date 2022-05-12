@@ -2,7 +2,7 @@ package com.example.KEA;
 
 import java.util.ArrayList;
 
-public class CrossCheck {
+public class CrossCheck extends android.app.Activity{
     public ArrayList<Users> maxAvailable;
     public int numAvailable;
     public int numUsers;
@@ -29,5 +29,9 @@ public class CrossCheck {
                 }
             }
         }
+    }
+    public CrossCheck() {
+
+
     }
 }
