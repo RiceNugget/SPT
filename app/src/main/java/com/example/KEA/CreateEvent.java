@@ -28,7 +28,7 @@ public class CreateEvent extends AppCompatActivity implements View.OnClickListen
     DatabaseReference databaseReference, databaseReference2;
     private Event event;
     private List<DateAvail> listOfDates = new ArrayList<DateAvail>();
-
+//hey
     public CreateEvent(){
 
     }
