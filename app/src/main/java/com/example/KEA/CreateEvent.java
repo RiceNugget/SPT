@@ -22,7 +22,7 @@ import java.util.List;
 
 public class CreateEvent extends AppCompatActivity implements View.OnClickListener {
     public int numUsers, duration, month, day, year;
-    DateAvail testDate = new DateAvail("05", "11", "2022");
+    DateAvail testDate = new DateAvail(month, day, year);
 
     private String eventNameStr, emailsStr, durationStr, dateStr;
 
@@ -117,7 +117,7 @@ public class CreateEvent extends AppCompatActivity implements View.OnClickListen
         event = new Event(eventNameStr,dateStr,durationStr,emailsStr);
 
         for (int i = 0; i < duration; i++){
-            listOfDates.add(new DateAvail("11", "22","4444"));
+            listOfDates.add(new DateAvail(month, day,year));
         }
 
 
