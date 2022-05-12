@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
         <activity
+            android:name=".SharedEvents"
+            android:exported="false" />
+        <activity
             android:name=".CalendarActivity"
             android:exported="false" />
         <activity

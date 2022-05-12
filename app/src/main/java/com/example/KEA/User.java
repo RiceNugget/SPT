@@ -8,6 +8,19 @@ public class User {
         this.name = name;
         this.available = available;
     }
+
+    public boolean isAvailable() {
+        return available;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
     //Anh's Constructor to pass data to Firebase
     //Use userName as Name
     public User(String userName, String email, boolean available) {

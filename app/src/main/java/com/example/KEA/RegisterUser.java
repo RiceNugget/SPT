@@ -114,8 +114,8 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                                             } else {
                                                 Toast.makeText(RegisterUser.this, "Signed Up Failed!", Toast.LENGTH_LONG).show();
                                             }
-                                                                              }
-                                                                          }
+                                        }
+                                    }
 
                             );
                         }
