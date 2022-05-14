@@ -2,6 +2,9 @@ package com.example.KEA;
 
 import java.util.ArrayList;
 
+/**
+ * this activity is not contributing to the app but out of fear that it will break our code we would rather just keep it
+ */
 public class Users {
     public int numUsers;
     public ArrayList<User> users;

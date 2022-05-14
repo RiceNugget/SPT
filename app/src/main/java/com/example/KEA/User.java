@@ -1,5 +1,8 @@
 package com.example.KEA;
 
+/**
+ * this activity is not contributing to the app but out of fear that it will break our code we would rather just keep it
+ */
 public class User {
     public boolean available;
     public String name, email, userName,password;
@@ -36,8 +39,6 @@ public class User {
         this.email = email;
 
     }
-
-
 
     public void setAvailable(boolean available) {
         this.available = available;
