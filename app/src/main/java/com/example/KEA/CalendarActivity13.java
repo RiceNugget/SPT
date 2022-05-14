@@ -5,35 +5,41 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.ArrayList;
-import java.util.List;
-
+/**
+ * Is responsible for the backend code behind the thirteenth calendar activity display. This display shows the time slots for the assigned by the person who creates
+ * the events. This page has the ability to travel to the home page, the immediately next day, or the immediately previous day. At the bottom of the page it
+ * also allows the user to click save and crosscheck to switch to the screen that will retrieve the availability information for all the users and summarize it.
+ */
 public class CalendarActivity13 extends AppCompatActivity implements View.OnClickListener {
-    Button goHome1, goHome2, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19, b20, b21, b22, b23, b24, b25, b26, b27, b28, b29, b30, b31, b32,goNext1,goNext2,goPrevious1,goPrevious2;
+    private Button goHome1, goHome2, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19, b20, b21, b22, b23, b24, b25, b26, b27, b28, b29, b30, b31, goNext1, goNext2, goPrevious1, goPrevious2;
+    private Boolean timeSlotAvail;
+    private FirebaseDatabase database;
+    private DatabaseReference reference;
+    private FirebaseUser user;
+    private String uid;
 
-    List<Boolean> dateAvailCloud = new ArrayList<Boolean>();
-    Event event;
-    Boolean timeSlotAvail = false;
-
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference reference = database.getReference("Dates");
-    DatabaseReference reference2Events = database.getReference("Events");
-    private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-    private String uid = user.getUid();
-
+    /**
+     * this method is called when the CalendarActivity13 is first activated, or in other words when the xml file for the CalendarActivity13 is opened
+     * this method sets up a firebase database instance so that the data can be updated everytime the screen is opened
+     * it also connects all the buttons with their layout counterparts and starts listening for whether or not any buttons have been pressed.
+     * @param savedInstanceState allows the app to be reopened at the same state as it was closed, can help if the app were to crash
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar13);
 
+        database = FirebaseDatabase.getInstance();
+        timeSlotAvail = false;
+        reference = database.getReference("Dates");
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        uid = user.getUid();
 
         goHome1 = findViewById(R.id.goHome1);
         goHome1.setOnClickListener(this);
@@ -121,7 +127,6 @@ public class CalendarActivity13 extends AppCompatActivity implements View.OnClic
         b17.setOnClickListener(this);
         busyButton(b17);
 
-
         b18 = findViewById(R.id.availButton18);
         b18.setOnClickListener(this);
         busyButton(b18);
@@ -177,34 +182,13 @@ public class CalendarActivity13 extends AppCompatActivity implements View.OnClic
         b31 = findViewById(R.id.availButton30);
         b31.setOnClickListener(this);
         busyButton(b31);
-
     }
 
-    /*public void readDatabase(){
-        Log.d("ANH", "in readDatabase");
-        Log.d("ANH","Reference child uid 0  " + reference.child(uid).child("0").child("availLists"));
-        Log.d("ANH","Reference child uid 0  " + reference.child(uid).child("0").child("availLists").child("0"));
-        reference.child(uid).child("0").child("availLists").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-               dateAvailCloud.clear();
-                Log.d("ANH", "in data Change");
-
-
-
-                for (DataSnapshot boo : snapshot.getChildren()){
-                    dateAvailCloud.add(boo.getValue(Boolean.class));
-                }
-                Log.d("ANH", "dateAvailCloud = " + dateAvailCloud.toString());
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(CalendarActivity.this, "Something went wrong", Toast.LENGTH_LONG).show();
-            }
-        });
-    }*/
-
+    /**
+     * this method will be called when any button is clicked
+     * the method will check through the cases to execute the correct action based on which button was pressed
+     * @param view a type of container that allows for the user to interact with the app, on this screen this came in the form of the buttons
+     */
     @Override
     public void onClick(View view) {
 
@@ -315,10 +299,15 @@ public class CalendarActivity13 extends AppCompatActivity implements View.OnClic
                 startActivity(new Intent(this, CalendarActivity12.class));
                 break;
         }
-
     }
 
-
+    /**
+     * is called when one of the busy-free buttons is pressed
+     * updates the firebase realtime database based on what a user decides on availability
+     * this method also calls other methods that will change the color of the busy-free button so provide a visual cue that the change has been made
+     * @param b any busy-free button, when this type of button is clicked the firebase database is updated
+     * @param i the number of the boolean (depending on the button) as it correlates with the index of the ArrayList called availLists located in the realtime database
+     */
     public void changeButton(Button b, int i) {
        //i is the number of the button, and correlates with the i-1 on the arrayList
         String iAltStr = Integer.toString(i-1);
@@ -326,26 +315,31 @@ public class CalendarActivity13 extends AppCompatActivity implements View.OnClic
         reference.child(uid).child("0").child("availLists").child(iAltStr).setValue(!timeSlotAvail);
         timeSlotAvail = !timeSlotAvail;
 
-
         //the boolean value is reversed when this method is called is because the method is named "changeButton"
         if (timeSlotAvail) {
             freeButton(b);
         } else {
             busyButton(b);
         }
-
-
     }
 
+    /**
+     * will be called by changeButton if the user is trying to change a button from stating free to stating busy
+     * will be called by changeButton if the user is trying to change the color of a button from being green to red
+     * @param b any busy-free button that will have its color and text changed when the user clicks on it
+     */
     public void busyButton(Button b) {
         b.setBackgroundColor(Color.RED);
         b.setText("Busy");
     }
 
+    /**
+     * will be called by changeButton if the user is trying to change a button from stating busy to stating free
+     * will be called by changeButton if the user is trying to change the color of a button from being red to green
+     * @param b any busy-free button that will have its color and text changed when the user clicks on it
+     */
     public void freeButton(Button b) {
         b.setBackgroundColor(Color.GREEN);
         b.setText("Free");
     }
-
-
 }

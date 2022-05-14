@@ -6,9 +6,6 @@ public class Event {
     private String duration;
     private String sharedEmails;
 
-
-
-
     public Event (String eventName, String startDate, String duration, String sharedEmails){
         this.eventName = eventName;
         this.startDate = startDate;

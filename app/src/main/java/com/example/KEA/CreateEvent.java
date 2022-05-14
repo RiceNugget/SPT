@@ -28,7 +28,7 @@ public class CreateEvent extends AppCompatActivity implements View.OnClickListen
     DatabaseReference databaseReference, databaseReference2;
     private Event event;
     private List<DateAvail> listOfDates = new ArrayList<DateAvail>();
-//hey
+
     public CreateEvent(){
 
     }
@@ -94,7 +94,7 @@ public class CreateEvent extends AppCompatActivity implements View.OnClickListen
             return;
         }
 
-        //Finding the number of total users using the number of emails inputed by the user
+        //Finding the number of total users using the number of emails inputted by the user
         numUsers = 0;
         for (int i = 0; i < emailsStr.length(); i++) {
             if (emailsStr.charAt(i) == ',') {
@@ -122,7 +122,7 @@ public class CreateEvent extends AppCompatActivity implements View.OnClickListen
         Toast.makeText(CreateEvent.this,"Event created successfully",Toast.LENGTH_LONG);
         startActivity(new Intent(CreateEvent.this, CalendarActivity.class));
 
-        }
+    }
 
     public void newEventForReceiver() {
         FirebaseDatabase db = FirebaseDatabase.getInstance();
@@ -146,8 +146,8 @@ public class CreateEvent extends AppCompatActivity implements View.OnClickListen
 
     }
 
-        public String getEventDate(){
+    public String getEventDate(){
         return dateStr;
-        }
     }
+}
 
