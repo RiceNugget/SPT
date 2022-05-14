@@ -8,6 +8,7 @@ public class DateAvail {
     private int day;
     private int year;
     public List<Boolean>availLists;
+    private int numUsers;
     //public Boolean[] availArray;
 
     public DateAvail(int month,int day, int year){
@@ -19,6 +20,13 @@ public class DateAvail {
             availLists.add(false);
         }
     }
+    public DateAvail(int month,int day, int year, int numUsers, ArrayList<Boolean> availLists){
+        this.month = month;
+        this.day = day;
+        this.year = year;
+        this.numUsers = numUsers;
+        this.availLists = availLists;
+        }
 
 
     public DateAvail(){

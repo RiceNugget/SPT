@@ -11,6 +11,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -23,7 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CalendarActivity extends AppCompatActivity implements View.OnClickListener {
-    Button goHome1, goHome2, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19, b20, b21, b22, b23, b24, b25, b26, b27, b28, b29, b30, b31, b32,goNext1,goNext2;
+    Button goHome1, goHome2, saveAndCrosscheck, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19, b20, b21, b22, b23, b24, b25, b26, b27, b28, b29, b30, b31, b32,goNext1,goNext2;
 
     List<Boolean> dateAvailCloud = new ArrayList<Boolean>();
     Event event;
@@ -34,12 +37,40 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
     DatabaseReference reference2Events = database.getReference("Events");
     private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     private String uid = user.getUid();
-
+    DataSnapshot snapshot;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
 
+            Task<DataSnapshot> task = reference.child("Events").get();
+
+            task.addOnSuccessListener(new OnSuccessListener() {
+                @Override
+                public void onSuccess(Object o) {
+                    Log.d("MRS.T", "SUCCESS ...");
+                    Log.d("MRS.T", "TASK: " + task.getResult().getValue());
+
+                    snapshot = (DataSnapshot) task.getResult();
+
+                    for (DataSnapshot ds : snapshot.getChildren()) {
+                        Event event = ds.getValue(Event.class);
+                        String date = event.getStartDate();
+                        Log.d("DateTest", date);
+
+                    }
+                }
+            });
+            task.addOnFailureListener(new OnFailureListener() {
+                public void onFailure(Exception e) {
+                    Log.d("MRS.T", "An Unfortunate Error Occurred ...");
+                    // handle any errors here
+                    Toast.makeText(CalendarActivity.this,"Something Went Wrong", Toast.LENGTH_LONG);
+                }
+            });
+
+        saveAndCrosscheck = findViewById(R.id.saveAndCrosscheck);
+        saveAndCrosscheck.setOnClickListener(this);
 
         goHome1 = findViewById(R.id.goHome1);
         goHome1.setOnClickListener(this);
@@ -285,8 +316,11 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
             case R.id.goNext1:
             case R.id.goNext2:
                 startActivity(new Intent(this, CalendarActivity2.class));
+                break;
+            case R.id.saveAndCrosscheck:
+               // startActivity(new Intent(CalendarActivity.this,CrossCheck.class));
+                break;
         }
-
     }
 
 
