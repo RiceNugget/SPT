@@ -166,4 +166,14 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <Button
+        android:id="@+id/CreateEventButton2"
+        android:layout_width="270dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="164dp"
+        android:layout_marginTop="76dp"
+        android:text="Create Event2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CreateEventButton" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

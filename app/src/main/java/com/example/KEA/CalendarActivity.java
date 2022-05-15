@@ -24,7 +24,8 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
     private DatabaseReference reference;
     private FirebaseUser user;
     private String uid;
-    public String usernameStr;
+    private String usernameStr = "";
+
 
 
     /**
@@ -43,15 +44,24 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
         reference = database.getReference("Dates");
         user = FirebaseAuth.getInstance().getCurrentUser();
         uid = user.getUid();
-        usernameStr = new String();
 
+        if (savedInstanceState == null) {
+            Log.d("CalendarActivity", "savedInstanceState is null");
+            Bundle extras = getIntent().getExtras();
 
-        Intent intent = getIntent();
-        Bundle bundle =getIntent().getBundleExtra(CreateEvent.usernameString);
-
-        if(bundle != null){
-            usernameStr = intent.getStringExtra(CreateEvent.usernameString);
+            if(extras == null) {
+                Log.d("CalendarActivity", "Extra is null" + usernameStr);
+                usernameStr= null;
+            } else {
+                usernameStr= extras.getString("STRING_I_NEED");
+                Log.d("CalendarActivity", "Extra is not null" + usernameStr);
+            }
+        } else {
+            usernameStr = (String) savedInstanceState.getSerializable("STRING_I_NEED");
+            Log.d("CalendarActivity", "savedInstanceState is not null" + usernameStr);
         }
+
+
 
 
 

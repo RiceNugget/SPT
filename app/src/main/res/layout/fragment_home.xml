@@ -15,4 +15,9 @@
         android:layout_marginEnd="247dp"
         android:layout_marginBottom="232dp"
         android:text="View Cross-Check Result" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text = "HELLO"
+        android:textSize="69dp"/>
 </RelativeLayout>

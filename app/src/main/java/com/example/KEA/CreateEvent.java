@@ -24,7 +24,7 @@ public class CreateEvent extends AppCompatActivity implements View.OnClickListen
     public int month, day, year;
     private String eventNameStr, friendUsernameStr, dateStr, usernameStr;
     private EditText eventNameEntry, friendUsername, dateEntry, enterUsername;
-    private Button createEventButton;
+    private Button createEventButton, createEventButton2;
 
 
     FirebaseDatabase db = FirebaseDatabase.getInstance();
@@ -50,6 +50,9 @@ public class CreateEvent extends AppCompatActivity implements View.OnClickListen
         createEventButton = findViewById(R.id.CreateEventButton);
         createEventButton.setOnClickListener(this);
 
+        createEventButton2 = findViewById(R.id.CreateEventButton2);
+        createEventButton2.setOnClickListener(this);
+
         eventNameEntry = findViewById(R.id.enterUsername2);
         friendUsername = findViewById(R.id.enterEmailsInvite);
         dateEntry = findViewById(R.id.enterDate);
@@ -61,14 +64,15 @@ public class CreateEvent extends AppCompatActivity implements View.OnClickListen
     public void onClick(View view) {
         switch (view.getId()) {
             case (R.id.CreateEventButton):
-                Intent intent2 = new Intent(CreateEvent.this, CalendarActivity.class);
-                intent2.putExtra(usernameString, "crying");
-                Log.d("CreateEvent", "sending intent " + "crying");
-                startActivity(intent2);
                 newEvent();
                 //openCalendarActivity();
                 break;
+            case (R.id.CreateEventButton2):
+                //newEvent();
+                openCalendarActivity();
+                break;
         }
+
 
     }
 
@@ -143,11 +147,19 @@ public class CreateEvent extends AppCompatActivity implements View.OnClickListen
 
 
         Toast.makeText(CreateEvent.this, "Event created successfully", Toast.LENGTH_LONG);
-        startActivity(new Intent(CreateEvent.this, CalendarActivity.class));
+
+        Intent intent = new Intent(CreateEvent.this, CalendarActivity.class);
+        Log.d("CreateEvent", "openCalendarActivity" + usernameStr);
+        intent.putExtra("STRING_I_NEED", usernameStr);
+        startActivity(intent);
     }
 
     public void openCalendarActivity() {
-
+        Intent i = new Intent(CreateEvent.this, CalendarActivity.class);
+       // String strName = "hi";
+        Log.d("CreateEvent", "openCalendarActivity" + usernameStr);
+        i.putExtra("STRING_I_NEED", usernameStr);
+        startActivity(i);
     }
 
 
