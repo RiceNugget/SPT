@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
@@ -65,11 +66,17 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         Log.d("anh", "in signUpUser");
         String email = enterEmail.getText().toString().trim();
         String password = enterPassword.getText().toString().trim();
+        String username = enterUserName.getText().toString().trim();
 
 
         if (email.isEmpty()) {
             enterEmail.setError("Email is not valid!");
             enterEmail.requestFocus();
+            return;
+        }
+        if (username.isEmpty()) {
+            enterUserName.setError("Username is required");
+            enterUserName.requestFocus();
             return;
         }
 
@@ -99,12 +106,9 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                         Log.d("anh", "in onComplete1");
                         if (task.isSuccessful()) {
                             Log.d("anh", "in Successful");
-                            User user = new User(email, password);
-
+                            User user = new User(email, password, username);
                             //Setting the ID of the new account from Firebase to the user object
-                            FirebaseDatabase.getInstance().getReference("Users")
-                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                    .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            FirebaseDatabase.getInstance().getReference("Users").child(username).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
                                             Log.d("anh", "in onComplete2");

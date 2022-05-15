@@ -69,10 +69,7 @@ public class SharedEvents extends AppCompatActivity {
         }
 
     public void createSharedEvents(Event event){
-        Log.d("SharedEvents", "sharedEmail " + event.getStartDate());
-        Log.d("SharedEvents", "Duration " + event.getDuration());
-        CreateEvent eventForReceiver = new CreateEvent(event.getEventName(),event.getDuration(), event.getStartDate());
-        eventForReceiver.newEventForReceiver();
+        CreateEvent eventForReceiver = new CreateEvent(event.getEventName(), event.getMonth(), event.getDay(), event.getYear());
         startActivity(new Intent(SharedEvents.this,CalendarActivity.class));
     }
 }

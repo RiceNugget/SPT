@@ -17,7 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
  * also allows the user to click save and crosscheck to switch to the screen that will retrieve the availability information for all the users and summarize it.
  */
 public class CalendarActivity2 extends AppCompatActivity implements View.OnClickListener {
-    private Button goHome1, goHome2, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19, b20, b21, b22, b23, b24, b25, b26, b27, b28, b29, b30, b31, goNext1, goNext2, goPrevious1, goPrevious2;
+    private Button goHome1, goHome2, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19, b20, b21, b22, b23, b24, b25, b26, b27, b28, b29, b30, b31,b32, goNext1, goNext2, goPrevious1, goPrevious2;
     private Boolean timeSlotAvail;
     private FirebaseDatabase database;
     private DatabaseReference reference;
@@ -175,13 +175,17 @@ public class CalendarActivity2 extends AppCompatActivity implements View.OnClick
         b29.setOnClickListener(this);
         busyButton(b29);
 
-        b30 = findViewById(R.id.availButton31);
+        b30 = findViewById(R.id.availButton30);
         b30.setOnClickListener(this);
         busyButton(b30);
 
-        b31 = findViewById(R.id.availButton30);
+        b31 = findViewById(R.id.availButton31);
         b31.setOnClickListener(this);
         busyButton(b31);
+
+        b32 = findViewById(R.id.availButton32);
+        b32.setOnClickListener(this);
+        busyButton(b32);
     }
 
     /**
@@ -289,6 +293,9 @@ public class CalendarActivity2 extends AppCompatActivity implements View.OnClick
                 break;
             case R.id.availButton31:
                 changeButton(b31, 31);
+                break;
+            case R.id.availButton32:
+                changeButton(b32, 32);
                 break;
             case R.id.goNext1:
             case R.id.goNext2:

@@ -5,7 +5,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -14,7 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
         <activity
-            android:name=".CrossCheck"
+            android:name=".MyEvents"
+            android:exported="false" />
+        <activity
+            android:name=".CrossCheckResult"
             android:exported="false" />
         <activity
             android:name=".SharedEvents"
@@ -28,7 +30,6 @@
         <activity
             android:name=".HolyShit"
             android:exported="false" />
-
         <activity
             android:name=".RegisterUser"
             android:exported="false" />

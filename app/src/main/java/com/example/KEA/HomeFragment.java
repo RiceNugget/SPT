@@ -16,27 +16,14 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home,container,false);
-        CreateEvent event = new CreateEvent();
-        Button checkSharedEventsButton = (Button)view.findViewById(R.id.checkSharedEventsButton);
         Button crossCheck = (Button)view.findViewById(R.id.crossCheck);
-
-        checkSharedEventsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                switch (view.getId()){
-                    case R.id.checkSharedEventsButton:
-                        startActivity(new Intent(getActivity(), SharedEvents.class));
-                        break;
-                }
-            }
-        });
 
         crossCheck.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 switch (view.getId()){
                     case R.id.crossCheck:
-                        startActivity(new Intent(getActivity(),SharedEvents.class));
+                        startActivity(new Intent(getActivity(),CrossCheckResult.class));
                 }
             }
         });

@@ -15,17 +15,31 @@
         <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/drawable/ic_schedule.xml" value="0.1475" />
         <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/layout/activity_calendar.xml" value="0.165625" />
         <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/layout/activity_calendar10.xml" value="0.2712378640776699" />
-        <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/layout/activity_create_event.xml" value="0.1765625" />
-        <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/layout/activity_cross_check.xml" value="0.1765625" />
+        <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/layout/activity_calendar11.xml" value="0.24514563106796117" />
+        <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/layout/activity_calendar12.xml" value="0.24514563106796117" />
+        <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/layout/activity_calendar13.xml" value="0.24514563106796117" />
+        <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/layout/activity_calendar14.xml" value="0.24514563106796117" />
+        <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/layout/activity_calendar2.xml" value="0.22549019607843138" />
+        <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/layout/activity_calendar4.xml" value="0.24514563106796117" />
+        <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/layout/activity_calendar5.xml" value="0.24514563106796117" />
+        <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/layout/activity_calendar6.xml" value="0.24514563106796117" />
+        <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/layout/activity_calendar7.xml" value="0.24514563106796117" />
+        <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/layout/activity_calendar8.xml" value="0.24514563106796117" />
+        <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/layout/activity_calendar9.xml" value="0.24514563106796117" />
+        <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/layout/activity_create_event.xml" value="0.335" />
+        <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/layout/activity_cross_check.xml" value="0.45" />
+        <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/layout/activity_cross_check_m.xml" value="0.2359375" />
         <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/layout/activity_holy_shit.xml" value="0.2755208333333333" />
-        <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.1765625" />
+        <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/layout/activity_register_user.xml" value="0.1765625" />
         <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/layout/activity_second.xml" value="0.1765625" />
+        <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/layout/activity_shared_event.xml" value="0.2712378640776699" />
         <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/layout/activity_third.xml" value="0.1765625" />
         <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/layout/cross_check.xml" value="0.2712378640776699" />
         <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/layout/fragment_calendars.xml" value="0.1765625" />
         <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/layout/fragment_friends.xml" value="0.1765625" />
         <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/layout/fragment_home.xml" value="0.1765625" />
+        <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/layout/jack.xml" value="0.18487394957983194" />
         <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/layout/nav_header.xml" value="0.1765625" />
         <entry key="..\:/Users/anhtr/MyApplication/app/src/main/res/menu/drawer_menu.xml" value="0.1765625" />
         <entry key="app/src/main/res/layout/activity_calendar.xml" value="0.24047088623046878" />
@@ -43,9 +57,7 @@
         <entry key="app/src/main/res/layout/activity_calendar8.xml" value="0.23007246376811594" />
         <entry key="app/src/main/res/layout/activity_calendar9.xml" value="0.23007246376811594" />
         <entry key="app/src/main/res/layout/activity_create_event.xml" value="0.15070921985815602" />
-        <entry key="app/src/main/res/layout/activity_cross_check.xml" value="0.21603260869565216" />
-        <entry key="app/src/main/res/layout/activity_cross_checker.xml" value="0.21603260869565216" />
-        <entry key="app/src/main/res/layout/activity_holy_shit.xml" value="0.21052631578947367" />
+        <entry key="app/src/main/res/layout/activity_holy_shit.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.15070921985815602" />
         <entry key="app/src/main/res/layout/activity_register_user.xml" value="0.15070921985815602" />
         <entry key="app/src/main/res/layout/activity_third.xml" value="0.15070921985815602" />

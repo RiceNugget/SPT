@@ -18,7 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
  * This is the final CalendarActivity as the limit to the duration is 14 days.
  */
 public class CalendarActivity14 extends AppCompatActivity implements View.OnClickListener {
-    private Button goHome1, goHome2, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19, b20, b21, b22, b23, b24, b25, b26, b27, b28, b29, b30, b31, goPrevious1, goPrevious2;
+    private Button goHome1, goHome2, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19, b20, b21, b22, b23, b24, b25, b26, b27, b28, b29, b30, b31, b32, goPrevious1, goPrevious2;
     private Boolean timeSlotAvail;
     private FirebaseDatabase database;
     private DatabaseReference reference;
@@ -170,13 +170,17 @@ public class CalendarActivity14 extends AppCompatActivity implements View.OnClic
         b29.setOnClickListener(this);
         busyButton(b29);
 
-        b30 = findViewById(R.id.availButton31);
+        b30 = findViewById(R.id.availButton30);
         b30.setOnClickListener(this);
         busyButton(b30);
 
-        b31 = findViewById(R.id.availButton30);
+        b31 = findViewById(R.id.availButton32);
         b31.setOnClickListener(this);
         busyButton(b31);
+
+        b32 = findViewById(R.id.availButton32);
+        b32.setOnClickListener(this);
+        busyButton(b32);
     }
 
     /**

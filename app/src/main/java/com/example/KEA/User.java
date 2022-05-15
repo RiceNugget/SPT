@@ -1,17 +1,8 @@
 package com.example.KEA;
 
 public class User {
-    public boolean available;
-    public String name, email, userName,password;
-    // Krishna's constructor
-    public User(String name, boolean available) {
-        this.name = name;
-        this.available = available;
-    }
 
-    public boolean isAvailable() {
-        return available;
-    }
+    public String name, email, userName,password;
 
     public String getName() {
         return name;
@@ -23,11 +14,10 @@ public class User {
 
     //Anh's Constructor to pass data to Firebase
     //Use userName as Name
-    public User(String userName, String email, boolean available) {
-        this.name = name;
+    public User(String email, String password, String userName) {
+        this.password= password;
         this.userName = userName;
         this.email = email;
-        this.available = available;
 
     }
 
@@ -39,12 +29,7 @@ public class User {
 
 
 
-    public void setAvailable(boolean available) {
-        this.available = available;
-    }
-    public void changeAvailability(){
-        available = true;
-    }
+
     public void setName(String name) {
         this.name = name;
     }

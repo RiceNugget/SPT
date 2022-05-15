@@ -9,7 +9,16 @@ public class DateAvail {
     private int year;
     public List<Boolean>availLists;
     private int numUsers;
-    //public Boolean[] availArray;
+
+    public DateAvail(){
+        month = 0;
+        day = 0;
+        year = 0;
+        availLists = new ArrayList<Boolean>();
+        for (int i = 0; i < 32; i++){
+            availLists.add(false);
+        }
+    }
 
     public DateAvail(int month,int day, int year){
         this.month = month;
@@ -20,6 +29,8 @@ public class DateAvail {
             availLists.add(false);
         }
     }
+
+    //the constructor below is for the cross-checking method
     public DateAvail(int month,int day, int year, int numUsers, ArrayList<Boolean> availLists){
         this.month = month;
         this.day = day;
@@ -29,12 +40,7 @@ public class DateAvail {
         }
 
 
-    public DateAvail(){
-        month = 0;
-        day = 0;
-        year = 0;
-        availLists = new ArrayList<Boolean>();
-    }
+
     public int getMonth() {
         return month;
     }

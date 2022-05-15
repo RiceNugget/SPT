@@ -10,16 +10,16 @@ public class Users {
         users = new ArrayList<User>();
         this.numUsers = numUsers;
         for(int i = 0; i<numUsers; i++) {
-            users.add(new User("User"+i, false));
+            //users.add(new User("User"+i, false));
         }
 
     }
     public int numAvailable() {
         int count = 0;
         for(int i = 0; i<numUsers; i++) {
-            if(users.get(i).available==true) {
-                count++;
-            }
+          //  if(users.get(i).available==true) {
+           //     count++;
+          //  }
         }
         return count;
     }
