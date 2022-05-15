@@ -34,6 +34,8 @@ public class HolyShit extends AppCompatActivity implements NavigationView.OnNavi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_holy_shit);
 
+        mFirebaseAuth = FirebaseAuth.getInstance();
+
         if (savedInstanceState == null) {
             Log.d("CalendarActivity2", "savedInstanceState is null");
             Bundle extras = getIntent().getExtras();
@@ -78,7 +80,7 @@ public class HolyShit extends AppCompatActivity implements NavigationView.OnNavi
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.nav_myEvents:
-                startActivity(new Intent(HolyShit.this,MyEvents.class));
+                startActivity(new Intent(HolyShit.this,CreateEvent.class));
                 break;
             case R.id.nav_calendars:
                 Intent intent = new Intent(HolyShit.this, CalendarActivity.class);
@@ -91,8 +93,9 @@ public class HolyShit extends AppCompatActivity implements NavigationView.OnNavi
                         new HomeFragment()).commit();
                 break;
             case R.id.nav_logout:
-                logout(logout);
-                //startActivity(new Intent(HolyShit.this,MainActivity.class));
+                //mFirebaseAuth.signOut();
+                //logout(logout);
+                startActivity(new Intent(HolyShit.this,MainActivity.class));
                 break;
         }
         drawer.closeDrawer(GravityCompat.START);

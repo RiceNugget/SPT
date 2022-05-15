@@ -13,10 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
         <activity
-            android:name=".MyEvents"
-            android:exported="false" />
-        <activity
             android:name=".CrossCheckResult"
+            android:parentActivityName=".HolyShit"
             android:exported="false" />
         <activity
             android:name=".SharedEvents"
@@ -26,6 +24,7 @@
             android:exported="false" />
         <activity
             android:name=".CreateEvent"
+            android:parentActivityName=".HolyShit"
             android:exported="false" />
         <activity
             android:name=".HolyShit"

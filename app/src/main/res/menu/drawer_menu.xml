@@ -16,7 +16,7 @@
         <item
             android:id="@+id/nav_myEvents"
             android:icon="@drawable/ic_friends"
-            android:title="Event Invites" />
+            android:title="Create Event" />
     </group>
 
     //This is an action that will not stay selected and will only perform an action

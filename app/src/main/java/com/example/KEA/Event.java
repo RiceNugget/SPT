@@ -5,6 +5,14 @@ public class Event {
     private int month, day, year;
     private String sharedEmails;
 
+    /**
+     * Create and event with an event's name, month, day, year of the start date, and the emails that user shares with
+     * @param eventName name of the event
+     * @param month of the start date
+     * @param day of the start date
+     * @param year of the start date
+     * @param sharedEmails emails that the user shares the event with
+     */
     public Event(String eventName, int month, int day, int year, String sharedEmails) {
         this.eventName = eventName;
         this.month = month;
@@ -12,6 +20,14 @@ public class Event {
         this.year = year;
         this.sharedEmails = sharedEmails;
     }
+
+    /**
+     * Create and event with an event's name, month, day, year of the start date
+     * @param eventName name of the event
+     * @param month
+     * @param day
+     * @param year
+     */
     public Event(String eventName, int month, int day, int year) {
         this.eventName = eventName;
         this.month = month;

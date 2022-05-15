@@ -45,6 +45,10 @@ public class CrossCheckResult extends AppCompatActivity {
     private Button crossCheckResult;
     ArrayList<DateAvail> bob = new ArrayList<>();
 
+    /**
+     * Initiates username, friend's username and a button that will call the getBothUserListDate method.
+     * @param savedInstanceState
+     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +73,12 @@ public class CrossCheckResult extends AppCompatActivity {
 
     }
 
+    /**
+     * Uses the username and the friends username to look up the availability of each user in Firebase.
+     *  The availability of each user is put into 14 Lists of booleans. Each user has 14 lists for each day of two weeks.
+     *  These 28 lists are crosschecked and the availability of both users are put into a new List.
+     *  The only case where the boolean value for both user is true is when both users are free.
+     */
     public void getBothUserListDate(){
 
         friendUsernameStr = friendUsername.getText().toString().trim();
@@ -181,6 +191,9 @@ public class CrossCheckResult extends AppCompatActivity {
 
     }
 
+    /**
+     * call on the CustomListAdapter to show the result of the crossCheck
+     */
     public void displayResult(){
         CustomListAdapter adapter = new CustomListAdapter(this, R.id.jack, bob);
         listView.setAdapter(adapter);

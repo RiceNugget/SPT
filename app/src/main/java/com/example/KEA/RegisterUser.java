@@ -28,6 +28,10 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
     private ProgressBar progressBar;
     private Button signUpButtonReg;
 
+    /**
+     * Create a Register User View
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,6 +66,9 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    /**
+     * Sign the user up with email using Firebase
+     */
     private void signUpUser() {
         Log.d("anh", "in signUpUser");
         String email = enterEmail.getText().toString().trim();

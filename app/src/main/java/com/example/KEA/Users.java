@@ -5,7 +5,9 @@ import java.util.ArrayList;
 public class Users {
     public int numUsers;
     public ArrayList<User> users;
-
+    /**
+     * This class is not used in the app but kept just in case something happens
+     */
     public Users(int numUsers) {
         users = new ArrayList<User>();
         this.numUsers = numUsers;

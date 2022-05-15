@@ -21,7 +21,12 @@ class CustomListAdapter extends ArrayAdapter {
     private Map<DateAvail, Boolean> noah;
 
 
-
+    /**
+     * Public constructor for the CustomListAdapter Class
+     * @param context
+     * @param resource
+     * @param items A list of 14 lists of DateAvail objects
+     */
     //public constructor
     public CustomListAdapter(Context context, int resource, ArrayList<DateAvail> items) {
         super(context,resource, items);

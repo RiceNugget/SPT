@@ -42,4 +42,5 @@
     <string name="busy_button">set</string>
     <string name="set_date">mm/dd/yyyy</string>
     <string name="busy_label">Set Availability</string>
+    <string name="instruction">Hello users! To get started, press the + button to create a new event. If you have already made and shared an event, press crosscheck!</string>
 </resources>

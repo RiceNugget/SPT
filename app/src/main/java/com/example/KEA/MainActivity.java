@@ -36,7 +36,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ProgressBar progressBar;
     private String usernameStr;
 
-
+    /**
+     * Creates the sign in screen
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,13 +86,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+    /**
+     * Sign the user in using Firebase
+     */
     private void userLogin() {
         String email = enterEmail.getText().toString().trim();
         String password = enterPassword.getText().toString().trim();
         usernameStr = enterUsername.getText().toString().trim();
 
         if(usernameStr.isEmpty()){
-            enterUsername.setError("Email is required!");
+            enterUsername.setError("Username is required!");
             enterUsername.requestFocus();
             return;
         }

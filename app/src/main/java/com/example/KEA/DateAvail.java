@@ -10,6 +10,10 @@ public class DateAvail {
     public List<Boolean>availLists;
     private int numUsers;
 
+    /**
+     * Creates a DateAvail object that composes of the month, day, year of the starting date, and a List of 32 booleans for
+     * each half hour mark for 16 hours
+     */
     public DateAvail(){
         month = 0;
         day = 0;
@@ -20,6 +24,13 @@ public class DateAvail {
         }
     }
 
+    /**
+     * Creates a DateAvail object that composes of the month, day, year of the starting date, and a List of 32 booleans for
+     * each half hour mark for 16 hours
+     * @param month of the starting date
+     * @param day of the starting date
+     * @param year of the starting date
+     */
     public DateAvail(int month,int day, int year){
         this.month = month;
         this.day = day;

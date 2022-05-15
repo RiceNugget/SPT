@@ -12,8 +12,12 @@ public class User {
         return email;
     }
 
-    //Anh's Constructor to pass data to Firebase
-    //Use userName as Name
+    /**
+     * Creates a user with the user's password, username, and email
+     * @param email of the user
+     * @param password of the user
+     * @param userName of the user
+     */
     public User(String email, String password, String userName) {
         this.password= password;
         this.userName = userName;

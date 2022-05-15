@@ -25,6 +25,10 @@ public class SharedEvents extends AppCompatActivity {
     DataSnapshot snapshot;
     String userEmail;
 
+    /**
+     * This class is not used in the app but kept just in case something happens
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
