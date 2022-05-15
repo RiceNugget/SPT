@@ -31,9 +31,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private FirebaseAuth mAuth;
     private TextView signUp, welcomeMessage;
-    private EditText enterPassword, enterEmail;
+    private EditText enterPassword, enterEmail, enterUsername;
     private Button signInButton;
     private ProgressBar progressBar;
+    private String usernameStr;
 
 
     @Override
@@ -55,6 +56,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         enterPassword= findViewById(R.id.enterPassword);
         enterEmail = findViewById(R.id.enterEmail);
+        enterUsername= findViewById(R.id.enterUserNameMain);
+
 
         progressBar = findViewById(R.id.progressBar);
 
@@ -83,7 +86,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void userLogin() {
         String email = enterEmail.getText().toString().trim();
         String password = enterPassword.getText().toString().trim();
+        usernameStr = enterUsername.getText().toString().trim();
 
+        if(usernameStr.isEmpty()){
+            enterUsername.setError("Email is required!");
+            enterUsername.requestFocus();
+            return;
+        }
         if(email.isEmpty()){
             enterEmail.setError("Email is required!");
             enterEmail.requestFocus();
@@ -111,7 +120,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    startActivity(new Intent(MainActivity.this,HolyShit.class));
+                    Intent intent = new Intent(MainActivity.this, HolyShit.class);
+                    Log.d("CalendarActivity", "goHome" + usernameStr);
+                    intent.putExtra("STRING_I_NEED", usernameStr);
+                    startActivity(intent);
                 }
                 else{
                     Toast.makeText(MainActivity.this,"Sign in failed",Toast.LENGTH_LONG).show();

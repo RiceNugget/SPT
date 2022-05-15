@@ -28,11 +28,20 @@
         android:id="@+id/enterEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="80dp"
         android:hint="Enter email"
         android:textColorHint="#000000"
+        app:layout_constraintTop_toBottomOf="@+id/enterUserNameMain"
+        tools:layout_editor_absoluteX="1dp" />
+
+    <EditText
+        android:id="@+id/enterUserNameMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:hint="Enter username"
+        android:textColorHint="#000000"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/welcomeMessage" />
 
@@ -40,11 +49,12 @@
         android:id="@+id/enterPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="39dp"
+        android:layout_marginTop="68dp"
         android:hint="Enter password"
         android:textColorHint="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/forgotPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/enterEmail" />
 

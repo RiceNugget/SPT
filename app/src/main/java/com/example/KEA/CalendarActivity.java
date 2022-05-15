@@ -62,9 +62,6 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
         }
 
 
-
-
-
         saveAndCrossCheck = findViewById(R.id.saveAndCrosscheck);
         saveAndCrossCheck.setOnClickListener(this);
 
@@ -320,7 +317,10 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.goNext1:
             case R.id.goNext2:
-                startActivity(new Intent(this, CalendarActivity2.class));
+                Intent intent = new Intent(CalendarActivity.this, CalendarActivity2.class);
+                Log.d("CalendarActivity", "goHome" + usernameStr);
+                intent.putExtra("STRING_I_NEED", usernameStr);
+                startActivity(intent);
                 break;
             case R.id.saveAndCrosscheck:
                 startActivity(new Intent(this, CrossCheckResult.class));
@@ -335,7 +335,6 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
      * @param i the number of the boolean (depending on the button) as it correlates with the index of the ArrayList called availLists located in the realtime database
      */
     public void changeButton(Button b, int i) {
-
         //i is the number of the button, and correlates with the i-1 on the arrayList
         String iAltStr = Integer.toString(i - 1);
 

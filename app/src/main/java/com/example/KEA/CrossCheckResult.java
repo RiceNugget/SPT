@@ -25,6 +25,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import android.os.Bundle;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -129,22 +131,29 @@ public class CrossCheckResult extends AppCompatActivity {
 
                             List<Boolean> s = currentUserAvail.get(k).getAvailLists();
                             List<Boolean> p = otherUserAvail.get(k).getAvailLists();
-                            ArrayList<Boolean> both = new ArrayList<>();
 
+                            List<Boolean> both=new ArrayList<Boolean>(Arrays.asList(new Boolean[32]));
+                            Collections.fill(both, Boolean.FALSE);
+
+                           // ArrayList<Boolean> both = new ArrayList<Boolean>(32);
+                           /* for (int m = 0; m < 32; m++){
+                                both.set(m, false);
+                            }*/
+                            Log.d("CrossCheckResult", "both" + both.toString());
                             for (int i = 0; i < 32; i++){
                                 if(s.get(i) == p.get(i) && s.get(i) == true ){
-                                    both.add(i,true);
+                                    both.set(i,true);
                                 }
                                 else if(s.get(i) == p.get(i) && s.get(i)== false){
-                                    both.add(i,false);
+                                    both.set(i,false);
                                 }
                                 else if(s.get(i) != p.get(i) && s.get(i)== false){
-                                    both.add(i,false);
+                                    both.set(i,false);
                                 }
                                 else if(s.get(i) != p.get(i) && s.get(i)== false){
-                                    both.add(i,false);
+                                    both.set(i,false);
                                 }
-                                dateAvail = new DateAvail(month, day ,year, 2, both);
+                                dateAvail = new DateAvail(month, day ,year, 2, (ArrayList<Boolean>)both);
                             }
 
                             bob.add(dateAvail);
