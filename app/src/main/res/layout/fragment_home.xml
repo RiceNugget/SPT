@@ -10,8 +10,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="237dp"
-        android:layout_marginEnd="251dp"
-        android:layout_marginBottom="99dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="241dp"
+        android:layout_marginEnd="247dp"
+        android:layout_marginBottom="232dp"
         android:text="View Cross-Check Result" />
 </RelativeLayout>

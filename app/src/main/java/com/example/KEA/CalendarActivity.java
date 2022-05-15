@@ -50,7 +50,7 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
         Bundle bundle =getIntent().getBundleExtra(CreateEvent.usernameString);
 
         if(bundle != null){
-            String usernameStr = intent.getStringExtra(CreateEvent.usernameString);
+            usernameStr = intent.getStringExtra(CreateEvent.usernameString);
         }
 
 
