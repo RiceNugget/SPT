@@ -27,6 +27,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+/**
+ * This activity handles the backend for the sign in screen, which is the MainActivity xml. This screen is the default screen if a user is not already signed in.
+ * A user can also move to register and create an account.
+ */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private FirebaseAuth mAuth;
@@ -35,10 +39,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button signInButton;
     private ProgressBar progressBar;
     private String usernameStr;
+    private FirebaseDatabase database;
+    private DatabaseReference myRef;
 
     /**
-     * Creates the sign in screen
-     * @param savedInstanceState
+     * This method is called when the sign in screen is opened
+     * @param savedInstanceState allows the app to be reopened at the same state as it was closed, can help if the app were to crash
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +52,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         mAuth = FirebaseAuth.getInstance();
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("message");
+        database = FirebaseDatabase.getInstance();
+        myRef = database.getReference("message");
 
         signUp = findViewById(R.id.signUpTextMain);
         signUp.setOnClickListener(this);
@@ -59,13 +65,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         enterPassword= findViewById(R.id.enterPassword);
         enterEmail = findViewById(R.id.enterEmail);
-        enterUsername= findViewById(R.id.enterUserNameMain);
-
 
         progressBar = findViewById(R.id.progressBar);
 
     }
 
+    /**
+     * this method will be called when any button is clicked
+     * the method will check through the cases to execute the correct action based on which button was pressed
+     * @param view a type of container that allows for the user to interact with the app, on this screen this came in the form of the buttons
+     */
     @Override
     public void onClick(View view) {
         switch (view.getId()){
@@ -86,8 +95,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    /**
-     * Sign the user in using Firebase
+    /***
+     * this method is called in order to login a user
+     * this does so by using the Firebase authentication to check whether or not an email password matches one from the database
      */
     private void userLogin() {
         String email = enterEmail.getText().toString().trim();
@@ -124,6 +134,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
+
+            /**
+             * this method is called to check whether or not the sign in was successful
+             */
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     Intent intent = new Intent(MainActivity.this, HolyShit.class);

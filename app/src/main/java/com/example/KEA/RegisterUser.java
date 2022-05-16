@@ -21,6 +21,10 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
+/**
+ * This class handles the backend of the Sign Up screen. It allows the user to set up an account and add their account information to the realtime database.
+ * This username and password will then be recalled when a user tries to sign in
+ */
 public class RegisterUser extends AppCompatActivity implements View.OnClickListener {
     private FirebaseAuth mAuth;
     private TextView welcomeMessage;
@@ -29,8 +33,8 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
     private Button signUpButtonReg;
 
     /**
-     * Create a Register User View
-     * @param savedInstanceState
+     * this method is called when the sign up screen is opened. it connects the buttons in the class to the buttons in the layout
+     * @param savedInstanceState allows the app to be reopened at the same state as it was closed, can help if the app were to crash
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +55,11 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         signUpButtonReg.setOnClickListener(this);
     }
 
+    /**
+     * this method is called when any buttons are clicked
+     * the method will check through the cases to execute the correct action based on which button was pressed
+     * @param view a type of container that allows for the user to interact with the app, on this screen this came in the form of the buttons
+     */
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -67,7 +76,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
     }
 
     /**
-     * Sign the user up with email using Firebase
+     * this method is called to decide whether or not the email or password meets the requirements and displays errors accordingly
      */
     private void signUpUser() {
         Log.d("anh", "in signUpUser");
@@ -79,11 +88,6 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         if (email.isEmpty()) {
             enterEmail.setError("Email is not valid!");
             enterEmail.requestFocus();
-            return;
-        }
-        if (username.isEmpty()) {
-            enterUserName.setError("Username is required");
-            enterUserName.requestFocus();
             return;
         }
 
