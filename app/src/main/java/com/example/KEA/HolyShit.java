@@ -26,6 +26,7 @@ public class HolyShit extends AppCompatActivity implements NavigationView.OnNavi
 
     /**
      * Will connect the layout for the navigation drawer to this class that connects portions of the UI to the layout.
+     * This class also connects the various fragments such as HomeFragment, CalendarsFragment, and FriendsFragment
      * @param savedInstanceState allows the app to be reopened at the same state as it was closed, can help if the app were to crash
      */
     @Override
@@ -54,8 +55,8 @@ public class HolyShit extends AppCompatActivity implements NavigationView.OnNavi
     }
 
     /**
-     *
-     * @param item represents
+     * this method delegates what happens when each navigation drawer button is pressed
+     * @param item any button on the navigation drawer
      * @return true or false depending on if the drawer is opened or closed
      */
     @Override
@@ -81,6 +82,10 @@ public class HolyShit extends AppCompatActivity implements NavigationView.OnNavi
         return true;
     }
 
+    /**
+     * this method is called when the user presses the back button on the tablet,
+     * If the navigation bar is open prior to pressing the back button, the navigation bar will close
+     */
     @Override
     public void onBackPressed() {
         if (drawer.isDrawerOpen(GravityCompat.START)) {
@@ -90,6 +95,10 @@ public class HolyShit extends AppCompatActivity implements NavigationView.OnNavi
         }
     }
 
+    /**
+     * determines what happens when any button is pressed (other than the ones in the navigation drawer)
+     * @param view a type of container that allows for the user to interact with the app, on this screen this came in the form of the buttons
+     */
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.createEventButton:
@@ -98,6 +107,10 @@ public class HolyShit extends AppCompatActivity implements NavigationView.OnNavi
         }
     }
 
+    /**
+     * this method can be called upon to log someone out of their account and return them to the log in screen
+     * @param view a type of container that allows for the user to interact with the app, on this screen this came in the form of the buttons
+     */
     public void logout (View view){
         mFirebaseAuth.signOut();
     }

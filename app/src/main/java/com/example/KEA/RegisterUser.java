@@ -10,16 +10,18 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
+/**
+ * This class handles the backend of the Sign Up screen. It allows the user to set up an account and add their account information to the realtime database.
+ * This username and password will then be recalled when a user tries to sign in
+ */
 public class RegisterUser extends AppCompatActivity implements View.OnClickListener {
     private FirebaseAuth mAuth;
     private TextView welcomeMessage;
@@ -27,6 +29,10 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
     private ProgressBar progressBar;
     private Button signUpButtonReg;
 
+    /**
+     * this method is called when the sign up screen is opened. it connects the buttons in the class to the buttons in the layout
+     * @param savedInstanceState allows the app to be reopened at the same state as it was closed, can help if the app were to crash
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +52,11 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         signUpButtonReg.setOnClickListener(this);
     }
 
+    /**
+     * this method is called when any buttons are clicked
+     * the method will check through the cases to execute the correct action based on which button was pressed
+     * @param view a type of container that allows for the user to interact with the app, on this screen this came in the form of the buttons
+     */
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -53,19 +64,19 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
             case R.id.welcomeMessage:
                 startActivity((new Intent(this, MainActivity.class)));
                 break;
-
             case R.id.signUpButtonReg:
                 signUpUser();
                 break;
-
         }
     }
 
+    /**
+     * this method is called to decide whether or not the email or password meets the requirements and displays errors accordingly
+     */
     private void signUpUser() {
         Log.d("anh", "in signUpUser");
         String email = enterEmail.getText().toString().trim();
         String password = enterPassword.getText().toString().trim();
-
 
         if (email.isEmpty()) {
             enterEmail.setError("Email is not valid!");
@@ -91,7 +102,6 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
             return;
         }
 
-
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -105,7 +115,12 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                             FirebaseDatabase.getInstance().getReference("Users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                        @Override
+
+                                /**
+                                 * this method is called to check whether or not the sign in was successful
+                                 * @param task
+                                 */
+                                @Override
                                         public void onComplete(@NonNull Task<Void> task) {
                                             Log.d("anh", "in onComplete2");
                                             if (task.isSuccessful()) {
@@ -116,12 +131,9 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                                             }
                                         }
                                     }
-
                             );
                         }
                     }
-
-
                 });
     }
 }

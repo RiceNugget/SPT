@@ -1,5 +1,9 @@
 package com.example.KEA;
 
+
+/**
+ * this activity is not contributing to the app but out of fear that it will break our code we would rather just keep it
+ */
 public class TimesArray {
     public Boolean[][] times;
     private int day;

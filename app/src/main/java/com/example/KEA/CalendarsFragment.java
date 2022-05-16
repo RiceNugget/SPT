@@ -21,6 +21,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+
+/**
+ * this activity is not contributing to the app but out of fear that it will break our code we would rather just keep it
+ */
 public class CalendarsFragment extends Fragment implements View.OnClickListener{
     private DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
     private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
