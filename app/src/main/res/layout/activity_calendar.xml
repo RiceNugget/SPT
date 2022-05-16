@@ -68,7 +68,7 @@
                     android:layout_width="match_parent"
                     android:layout_weight="4"
                     android:padding="10sp"
-                    android:text="D1: mm/dd/yyyy"
+                    android:text="D1"
                     android:textColor="@color/black"
                     android:gravity="center_horizontal"
                     />
@@ -938,12 +938,38 @@
                     android:textSize="14sp"></Button>
 
             </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/nine_thirty_PM_block"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"></TextView>
+
+                <Button
+                    android:id="@+id/availButton32"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/busy_button"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"></Button>
+
+            </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" >
                 <Button
-                    android:id="@+id/SaveAndCrosscheck"
+                    android:id="@+id/saveAndCrosscheck"
                     android:layout_height="match_parent"
                     android:layout_width="match_parent"
                     android:layout_weight="4"
@@ -982,16 +1008,8 @@
 
                     </TableLayout>
 
-                    <com.google.android.material.floatingactionbutton.FloatingActionButton
-                        android:id="@+id/floatingActionButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:clickable="true"
-                        app:srcCompat="@drawable/ic_home" />
 
-
-                </LinearLayout>
+    </LinearLayout>
                 </ScrollView>
 
 

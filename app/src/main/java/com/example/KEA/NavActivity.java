@@ -4,8 +4,9 @@ package com.example.KEA;
 
         import androidx.appcompat.app.AppCompatActivity;
 
-        import com.example.myapplication.R;
-
+/**
+ * this activity is not contributing to the app but out of fear that it will break our code we would rather just keep it
+ */
 public class NavActivity extends AppCompatActivity {
 
     @Override

@@ -25,6 +25,10 @@ public class SharedEvents extends AppCompatActivity {
     DataSnapshot snapshot;
     String userEmail;
 
+    /**
+     * This class is not used in the app but kept just in case something happens
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,10 +73,7 @@ public class SharedEvents extends AppCompatActivity {
         }
 
     public void createSharedEvents(Event event){
-        Log.d("SharedEvents", "sharedEmail " + event.getStartDate());
-        Log.d("SharedEvents", "Duration " + event.getDuration());
-        CreateEvent eventForReceiver = new CreateEvent(event.getEventName(),event.getDuration(), event.getStartDate());
-        eventForReceiver.newEventForReceiver();
+        CreateEvent eventForReceiver = new CreateEvent(event.getEventName(), event.getMonth(), event.getDay(), event.getYear());
         startActivity(new Intent(SharedEvents.this,CalendarActivity.class));
     }
 }

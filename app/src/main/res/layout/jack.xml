@@ -1,0 +1,509 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id ="@+id/jack"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="100">
+
+    <TextView
+        android:id="@+id/crossCheckDates"
+        android:layout_width="match_parent"
+        android:layout_height="1600dp"
+        android:layout_weight="33.3"
+        android:text="Date mm/dd/yyyy"
+        android:textAlignment="center" />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_weight="33.3">
+    <TextView
+        android:id="@+id/crossCheckHour1"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text = "@string/six_AM_block"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+    <TextView
+        android:id="@+id/crossCheckHour2"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text = "@string/six_thirty_AM_block"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+    <TextView
+        android:id="@+id/crossCheckHour3"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text = "@string/seven_AM_block"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+    <TextView
+        android:id="@+id/crossCheckHour4"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text = "@string/seven_thirty_AM_block"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+    <TextView
+        android:id="@+id/crossCheckHour5"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text = "@string/eight_AM_block"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+    <TextView
+        android:id="@+id/crossCheckHour6"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text = "@string/eight_thirty_AM_block"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+    <TextView
+        android:id="@+id/crossCheckHour7"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text = "@string/nine_AM_block"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+    <TextView
+        android:id="@+id/crossCheckHour8"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text = "@string/nine_thirty_AM_block"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+    <TextView
+        android:id="@+id/crossCheckHour9"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/ten_AM_block"
+        android:textAlignment="center" />
+    <TextView
+        android:id="@+id/crossCheckHour11"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/ten_thirty_AM_block"
+        android:textAlignment="center" />
+    <TextView
+        android:id="@+id/crossCheckHour12"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/eleven_AM_block"
+        android:textAlignment="center" />
+    <TextView
+        android:id="@+id/crossCheckHour13"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/eleven_thirty_AM_block"
+        android:textAlignment="center" />
+    <TextView
+        android:id="@+id/crossCheckHour14"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/twelve_PM_block"
+        android:textAlignment="center" />
+    <TextView
+        android:id="@+id/crossCheckHour15"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/one_PM_block"
+        android:textAlignment="center" />
+    <TextView
+        android:id="@+id/crossCheckHour16"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/one_thirty_PM_block"
+        android:textAlignment="center" />
+    <TextView
+        android:id="@+id/crossCheckHour17"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/two_PM_block"
+        android:textAlignment="center" />
+    <TextView
+        android:id="@+id/crossCheckHour18"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/two_thirty_PM_block"
+        android:textAlignment="center" />
+    <TextView
+        android:id="@+id/crossCheckHour19"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/three_PM_block"
+        android:textAlignment="center" />
+    <TextView
+        android:id="@+id/crossCheckHour20"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/three_thirty_PM_block"
+        android:textAlignment="center" />
+    <TextView
+        android:id="@+id/crossCheckHour21"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/four_PM_block"
+        android:textAlignment="center" />
+    <TextView
+        android:id="@+id/crossCheckHour22"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/four_thirty_PM_block"
+        android:textAlignment="center" />
+    <TextView
+        android:id="@+id/crossCheckHour23"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/five_PM_block"
+        android:textAlignment="center" />
+    <TextView
+        android:id="@+id/crossCheckHour24"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/five_thirty_PM_block"
+        android:textAlignment="center" />
+    <TextView
+        android:id="@+id/crossCheckHour25"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/six_PM_block"
+        android:textAlignment="center" />
+    <TextView
+        android:id="@+id/crossCheckHour26"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/six_thirty_PM_block"
+        android:textAlignment="center" />
+    <TextView
+        android:id="@+id/crossCheckHour27"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/seven_PM_block"
+        android:textAlignment="center" />
+    <TextView
+        android:id="@+id/crossCheckHour28"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/seven_thirty_PM_block"
+        android:textAlignment="center" />
+    <TextView
+        android:id="@+id/crossCheckHour29"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/eight_PM_block"
+        android:textAlignment="center" />
+    <TextView
+        android:id="@+id/crossCheckHour30"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/eight_thirty_PM_block"
+        android:textAlignment="center" />
+    <TextView
+        android:id="@+id/crossCheckHour31"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/nine_PM_block"
+        android:textAlignment="center" />
+    <TextView
+        android:id="@+id/crossCheckHour32"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/nine_thirty_PM_block"
+        android:textAlignment="center" />
+
+
+</LinearLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="33.4"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/crossCheckResults1"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text = "Result"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+    <TextView
+        android:id="@+id/crossCheckResults2"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text = "Result"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+    <TextView
+        android:id="@+id/crossCheckResults3"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text = "Result"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+    <TextView
+        android:id="@+id/crossCheckResults4"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text = "Result"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+    <TextView
+        android:id="@+id/crossCheckResults5"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text = "Result"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+    <TextView
+        android:id="@+id/crossCheckResults6"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text = "Result"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+    <TextView
+        android:id="@+id/crossCheckResults7"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text = "Result"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+    <TextView
+        android:id="@+id/crossCheckResults8"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text = "Result"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+    <TextView
+        android:id="@+id/crossCheckResults9"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text = "Result"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+    <TextView
+        android:id="@+id/crossCheckResults10"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text = "Result"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+    <TextView
+        android:id="@+id/crossCheckResults11"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text = "Result"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+    <TextView
+        android:id="@+id/crossCheckResults12"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text = "Result"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+    <TextView
+        android:id="@+id/crossCheckResults13"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text = "Result"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+    <TextView
+        android:id="@+id/crossCheckResults14"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text = "Result"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+    <TextView
+        android:id="@+id/crossCheckResults15"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text = "Result"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+    <TextView
+        android:id="@+id/crossCheckResults16"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text = "Result"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+    <TextView
+        android:id="@+id/crossCheckResults17"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text = "Result"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+    <TextView
+        android:id="@+id/crossCheckResults18"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text = "Result"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+    <TextView
+        android:id="@+id/crossCheckResults19"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text = "Result"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+    <TextView
+        android:id="@+id/crossCheckResults20"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text = "Result"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+    <TextView
+        android:id="@+id/crossCheckResults21"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text = "Result"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+    <TextView
+        android:id="@+id/crossCheckResults22"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text = "Result"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+    <TextView
+        android:id="@+id/crossCheckResults23"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text = "Result"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+    <TextView
+        android:id="@+id/crossCheckResults24"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text = "Result"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+    <TextView
+        android:id="@+id/crossCheckResults25"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text = "Result"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+    <TextView
+        android:id="@+id/crossCheckResults26"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text = "Result"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+    <TextView
+        android:id="@+id/crossCheckResults27"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text = "Result"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+    <TextView
+        android:id="@+id/crossCheckResults28"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text = "Result"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+    <TextView
+        android:id="@+id/crossCheckResults29"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text = "Result"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+    <TextView
+        android:id="@+id/crossCheckResults30"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text = "Result"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+    <TextView
+        android:id="@+id/crossCheckResults31"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text = "Result"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+
+
+
+
+</LinearLayout>
+
+
+</LinearLayout>

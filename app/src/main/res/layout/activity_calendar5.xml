@@ -56,970 +56,987 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".CalendarsFragment"
-        >
-    <LinearLayout
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-        android:orientation="vertical">
+        tools:context=".CalendarsFragment">
 
-        <TableLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="40dp"
-            android:background="@android:color/white">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <!-- Table heading-->
-
-            <TableRow
+            <TableLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
-                <TextView
-                    android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="40dp"
+                android:background="@android:color/white">
+
+                <!-- Table heading-->
+
+                <TableRow
                     android:layout_width="match_parent"
-                    android:layout_weight="4"
-                    android:padding="10sp"
-                    android:text="D5: mm/dd/yyyy"
-                    android:textColor="@color/black"
-                    android:gravity="center_horizontal"
-                    />
-            </TableRow>
-
-            <TableRow android:background="@color/theme">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="Time"
-                    android:textColor="@color/design_default_color_background"
-                    android:textSize="14sp"></TextView>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/busy_label"
-                    android:textColor="@color/design_default_color_background"
-                    android:textSize="14sp"></TextView>
-
-            </TableRow>
-
-            <!--Table Data-->
-            <TableRow>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/six_AM_block"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"></TextView>
-
-
-                <Button
-                    android:id="@+id/availButton1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/busy_button"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"
-                    tools:ignore="TextContrastCheck"></Button>
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/six_thirty_AM_block"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"></TextView>
-
-                <Button
-                    android:id="@+id/availButton2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/busy_button"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"
-                    tools:ignore="TextContrastCheck"></Button>
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/seven_AM_block"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"></TextView>
-
-                <Button
-                    android:id="@+id/availButton3"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/busy_button"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"></Button>
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/seven_thirty_AM_block"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"></TextView>
-
-                <Button
-                    android:id="@+id/availButton4"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/busy_button"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"></Button>
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/eight_AM_block"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"></TextView>
-
-                <Button
-                    android:id="@+id/availButton5"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/busy_button"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"></Button>
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/eight_thirty_AM_block"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"></TextView>
-
-                <Button
-                    android:id="@+id/availButton6"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/busy_button"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"></Button>
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/nine_AM_block"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"></TextView>
-
-                <Button
-                    android:id="@+id/availButton7"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/busy_button"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"></Button>
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/nine_thirty_AM_block"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"></TextView>
-
-                <Button
-                    android:id="@+id/availButton8"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/busy_button"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"></Button>
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/ten_AM_block"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"></TextView>
-
-                <Button
-                    android:id="@+id/availButton9"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/busy_button"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"></Button>
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/ten_thirty_AM_block"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"></TextView>
-
-                <Button
-                    android:id="@+id/availButton10"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/busy_button"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"></Button>
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/eleven_AM_block"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"></TextView>
-
-                <Button
-                    android:id="@+id/availButton11"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/busy_button"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"></Button>
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/eleven_thirty_AM_block"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"></TextView>
-
-                <Button
-                    android:id="@+id/availButton12"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/busy_button"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"></Button>
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/twelve_PM_block"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"></TextView>
-
-                <Button
-                    android:id="@+id/availButton13"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/busy_button"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"></Button>
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/twelve_thirty_PM_block"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"></TextView>
-
-                <Button
-                    android:id="@+id/availButton14"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/busy_button"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"></Button>
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/one_PM_block"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"></TextView>
-
-                <Button
-                    android:id="@+id/availButton15"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/busy_button"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"></Button>
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/one_thirty_PM_block"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"></TextView>
-
-                <Button
-                    android:id="@+id/availButton16"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/busy_button"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"></Button>
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/two_PM_block"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"></TextView>
-
-                <Button
-                    android:id="@+id/availButton17"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/busy_button"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"></Button>
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/two_thirty_PM_block"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"></TextView>
-
-                <Button
-                    android:id="@+id/availButton18"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/busy_button"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"></Button>
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/three_PM_block"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"></TextView>
-
-                <Button
-                    android:id="@+id/availButton19"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/busy_button"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"></Button>
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/three_thirty_PM_block"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"></TextView>
-
-                <Button
-                    android:id="@+id/availButton20"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/busy_button"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"></Button>
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/four_PM_block"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"></TextView>
-
-                <Button
-                    android:id="@+id/availButton21"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/busy_button"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"></Button>
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/four_thirty_PM_block"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"></TextView>
-
-                <Button
-                    android:id="@+id/availButton22"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/busy_button"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"></Button>
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/five_PM_block"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"></TextView>
-
-                <Button
-                    android:id="@+id/availButton23"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/busy_button"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"></Button>
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/five_thirty_PM_block"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"></TextView>
-
-                <Button
-                    android:id="@+id/availButton24"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/busy_button"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"></Button>
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/six_PM_block"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"></TextView>
-
-                <Button
-                    android:id="@+id/availButton25"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/busy_button"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"></Button>
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/six_thirty_PM_block"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"></TextView>
-
-                <Button
-                    android:id="@+id/availButton26"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/busy_button"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"></Button>
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/seven_PM_block"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"></TextView>
-
-                <Button
-                    android:id="@+id/availButton27"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/busy_button"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"></Button>
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/seven_thirty_PM_block"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"></TextView>
-
-                <Button
-                    android:id="@+id/availButton28"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/busy_button"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"></Button>
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/eight_PM_block"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"></TextView>
-
-                <Button
-                    android:id="@+id/availButton29"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/busy_button"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"></Button>
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/eight_thirty_PM_block"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"></TextView>
-
-                <Button
-                    android:id="@+id/availButton30"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/busy_button"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"></Button>
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/nine_PM_block"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"></TextView>
-
-                <Button
-                    android:id="@+id/availButton31"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/busy_button"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"></Button>
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" >
-                <Button
-                    android:id="@+id/SaveAndCrosscheck"
-                    android:layout_height="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="D5: mm/dd/yyyy"
+                        android:textColor="@color/black" />
+                </TableRow>
+
+                <TableRow android:background="@color/theme">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="Time"
+                        android:textColor="@color/design_default_color_background"
+                        android:textSize="14sp"></TextView>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/busy_label"
+                        android:textColor="@color/design_default_color_background"
+                        android:textSize="14sp"></TextView>
+
+                </TableRow>
+
+                <!--Table Data-->
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/six_AM_block"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"></TextView>
+
+
+                    <Button
+                        android:id="@+id/availButton1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/busy_button"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        tools:ignore="TextContrastCheck"></Button>
+
+                </TableRow>
+
+                <TableRow
                     android:layout_width="match_parent"
-                    android:layout_weight="4"
-                    android:padding="10sp"
-                    android:text="Save and CrossCheck"
-                    android:textColor="@color/black"
-                    />
-            </TableRow>
+                    android:layout_height="match_parent">
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" >
-                <Button
-                    android:id="@+id/goNext2"
-                    android:layout_height="match_parent"
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/six_thirty_AM_block"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"></TextView>
+
+                    <Button
+                        android:id="@+id/availButton2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/busy_button"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        tools:ignore="TextContrastCheck"></Button>
+
+                </TableRow>
+
+                <TableRow
                     android:layout_width="match_parent"
-                    android:layout_weight="4"
-                    android:padding="10sp"
-                    android:text="Next Day"
-                    android:textColor="@color/black"
-                    />
-            </TableRow>
+                    android:layout_height="match_parent">
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" >
-                <Button
-                    android:id="@+id/goPrevious2"
-                    android:layout_height="match_parent"
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/seven_AM_block"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"></TextView>
+
+                    <Button
+                        android:id="@+id/availButton3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/busy_button"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"></Button>
+
+                </TableRow>
+
+                <TableRow
                     android:layout_width="match_parent"
-                    android:layout_weight="4"
-                    android:padding="10sp"
-                    android:text="Previous Day"
-                    android:textColor="@color/black"
-                    />
-            </TableRow>
+                    android:layout_height="match_parent">
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <Button
-                    android:id="@+id/goHome2"
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/seven_thirty_AM_block"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"></TextView>
+
+                    <Button
+                        android:id="@+id/availButton4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/busy_button"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"></Button>
+
+                </TableRow>
+
+                <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:text="go Home"
-                    android:padding="10sp"
-                    android:textColor="@color/black" />
-            </TableRow>
+                    android:layout_height="match_parent">
 
-        </TableLayout>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/eight_AM_block"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"></TextView>
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:clickable="true"
-            app:srcCompat="@drawable/ic_home" />
+                    <Button
+                        android:id="@+id/availButton5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/busy_button"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"></Button>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/eight_thirty_AM_block"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"></TextView>
+
+                    <Button
+                        android:id="@+id/availButton6"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/busy_button"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"></Button>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/nine_AM_block"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"></TextView>
+
+                    <Button
+                        android:id="@+id/availButton7"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/busy_button"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"></Button>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/nine_thirty_AM_block"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"></TextView>
+
+                    <Button
+                        android:id="@+id/availButton8"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/busy_button"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"></Button>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/ten_AM_block"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"></TextView>
+
+                    <Button
+                        android:id="@+id/availButton9"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/busy_button"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"></Button>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/ten_thirty_AM_block"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"></TextView>
+
+                    <Button
+                        android:id="@+id/availButton10"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/busy_button"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"></Button>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/eleven_AM_block"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"></TextView>
+
+                    <Button
+                        android:id="@+id/availButton11"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/busy_button"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"></Button>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/eleven_thirty_AM_block"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"></TextView>
+
+                    <Button
+                        android:id="@+id/availButton12"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/busy_button"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"></Button>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/twelve_PM_block"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"></TextView>
+
+                    <Button
+                        android:id="@+id/availButton13"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/busy_button"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"></Button>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/twelve_thirty_PM_block"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"></TextView>
+
+                    <Button
+                        android:id="@+id/availButton14"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/busy_button"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"></Button>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/one_PM_block"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"></TextView>
+
+                    <Button
+                        android:id="@+id/availButton15"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/busy_button"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"></Button>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/one_thirty_PM_block"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"></TextView>
+
+                    <Button
+                        android:id="@+id/availButton16"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/busy_button"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"></Button>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/two_PM_block"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"></TextView>
+
+                    <Button
+                        android:id="@+id/availButton17"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/busy_button"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"></Button>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/two_thirty_PM_block"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"></TextView>
+
+                    <Button
+                        android:id="@+id/availButton18"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/busy_button"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"></Button>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/three_PM_block"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"></TextView>
+
+                    <Button
+                        android:id="@+id/availButton19"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/busy_button"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"></Button>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/three_thirty_PM_block"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"></TextView>
+
+                    <Button
+                        android:id="@+id/availButton20"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/busy_button"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"></Button>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/four_PM_block"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"></TextView>
+
+                    <Button
+                        android:id="@+id/availButton21"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/busy_button"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"></Button>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/four_thirty_PM_block"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"></TextView>
+
+                    <Button
+                        android:id="@+id/availButton22"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/busy_button"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"></Button>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/five_PM_block"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"></TextView>
+
+                    <Button
+                        android:id="@+id/availButton23"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/busy_button"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"></Button>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/five_thirty_PM_block"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"></TextView>
+
+                    <Button
+                        android:id="@+id/availButton24"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/busy_button"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"></Button>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/six_PM_block"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"></TextView>
+
+                    <Button
+                        android:id="@+id/availButton25"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/busy_button"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"></Button>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/six_thirty_PM_block"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"></TextView>
+
+                    <Button
+                        android:id="@+id/availButton26"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/busy_button"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"></Button>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/seven_PM_block"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"></TextView>
+
+                    <Button
+                        android:id="@+id/availButton27"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/busy_button"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"></Button>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/seven_thirty_PM_block"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"></TextView>
+
+                    <Button
+                        android:id="@+id/availButton28"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/busy_button"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"></Button>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/eight_PM_block"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"></TextView>
+
+                    <Button
+                        android:id="@+id/availButton29"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/busy_button"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"></Button>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/eight_thirty_PM_block"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"></TextView>
+
+                    <Button
+                        android:id="@+id/availButton30"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/busy_button"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"></Button>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/nine_PM_block"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"></TextView>
+
+                    <Button
+                        android:id="@+id/availButton31"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/busy_button"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"></Button>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/nine_thirty_PM_block"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"></TextView>
+
+                    <Button
+                        android:id="@+id/availButton32"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="@string/busy_button"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"></Button>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:id="@+id/SaveAndCrosscheck"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:padding="10sp"
+                        android:text="Save and CrossCheck"
+                        android:textColor="@color/black" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:id="@+id/goNext2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:padding="10sp"
+                        android:text="Next Day"
+                        android:textColor="@color/black" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:id="@+id/goPrevious2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:padding="10sp"
+                        android:text="Previous Day"
+                        android:textColor="@color/black" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:id="@+id/goHome2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:padding="10sp"
+                        android:text="go Home"
+                        android:textColor="@color/black" />
+                </TableRow>
+
+            </TableLayout>
 
 
-    </LinearLayout>
+        </LinearLayout>
     </ScrollView>
-
-
 
 
 </LinearLayout>

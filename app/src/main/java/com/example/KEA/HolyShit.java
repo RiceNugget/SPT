@@ -1,45 +1,64 @@
 package com.example.KEA;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
-
+import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.myapplication.R;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
-
+/**
+ * This class is responsible for the backend behind the navigation drawer that can be extended from certain screens. The functionality for the buttons in the
+ * navigation drawer is also attributed to this class.
+ */
 public class HolyShit extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     private DrawerLayout drawer;
-    private FloatingActionButton createEventButton;
-    RecyclerView recview;
+    private Button logout;
+    private FirebaseAuth mFirebaseAuth;
+    private String usernameStr;
+
+    /**
+     * Will connect the layout for the navigation drawer to this class that connects portions of the UI to the layout.
+     * This class also connects the various fragments such as HomeFragment, CalendarsFragment, and FriendsFragment
+     * @param savedInstanceState allows the app to be reopened at the same state as it was closed, can help if the app were to crash
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_holy_shit);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        mFirebaseAuth = FirebaseAuth.getInstance();
+
+        if (savedInstanceState == null) {
+            Log.d("CalendarActivity2", "savedInstanceState is null");
+            Bundle extras = getIntent().getExtras();
+
+            if(extras == null) {
+                Log.d("CalendarActivity2", "Extra is null" + usernameStr);
+                usernameStr= null;
+            } else {
+                usernameStr= extras.getString("STRING_I_NEED");
+                Log.d("CalendarActivity2", "Extra is not null" + usernameStr);
+            }
+        } else {
+            usernameStr = (String) savedInstanceState.getSerializable("STRING_I_NEED");
+            Log.d("CalendarActivity2", "savedInstanceState is not null" + usernameStr);
+        }
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        //createEventButton = findViewById(R.id.createEventButton);
-        //createEventButton.setOnClickListener((View.OnClickListener) this);
-
+        logout = findViewById(R.id.nav_logout);
         drawer = findViewById(R.id.drawer_layout1);
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -53,32 +72,41 @@ public class HolyShit extends AppCompatActivity implements NavigationView.OnNavi
 
     }
 
+    /**
+     * this method delegates what happens when each navigation drawer button is pressed
+     * @param item any button on the navigation drawer
+     * @return true or false depending on if the drawer is opened or closed
+     */
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.nav_friends:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new FriendsFragment()).commit();
+            case R.id.nav_myEvents:
+                startActivity(new Intent(HolyShit.this,CreateEvent.class));
                 break;
-
             case R.id.nav_calendars:
-                startActivity(new Intent(HolyShit.this,CalendarActivity.class));
+                Intent intent = new Intent(HolyShit.this, CalendarActivity.class);
+                Log.d("CalendarActivity", "goHome" + usernameStr);
+                intent.putExtra("STRING_I_NEED", usernameStr);
+                startActivity(intent);
                 break;
-
             case R.id.nav_home:
                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new HomeFragment()).commit();
                 break;
-
             case R.id.nav_logout:
-                //signOut();
+                //mFirebaseAuth.signOut();
+                //logout(logout);
+                startActivity(new Intent(HolyShit.this,MainActivity.class));
                 break;
         }
-
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
+    /**
+     * this method is called when the user presses the back button on the tablet,
+     * If the navigation bar is open prior to pressing the back button, the navigation bar will close
+     */
     @Override
     public void onBackPressed() {
         if (drawer.isDrawerOpen(GravityCompat.START)) {
@@ -88,13 +116,24 @@ public class HolyShit extends AppCompatActivity implements NavigationView.OnNavi
         }
     }
 
+    /**
+     * determines what happens when any button is pressed (other than the ones in the navigation drawer)
+     * @param view a type of container that allows for the user to interact with the app, on this screen this came in the form of the buttons
+     */
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.createEventButton:
                 startActivity(new Intent(this,CreateEvent.class));
                 break;
-
         }
+    }
+
+    /**
+     * this method can be called upon to log someone out of their account and return them to the log in screen
+     * @param view a type of container that allows for the user to interact with the app, on this screen this came in the form of the buttons
+     */
+    public void logout (View view){
+        mFirebaseAuth.signOut();
     }
 }
 
