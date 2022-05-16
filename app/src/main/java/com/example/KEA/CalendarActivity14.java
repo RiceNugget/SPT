@@ -3,6 +3,7 @@ package com.example.KEA;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,12 +19,13 @@ import com.google.firebase.database.FirebaseDatabase;
  * This is the final CalendarActivity as the limit to the duration is 14 days.
  */
 public class CalendarActivity14 extends AppCompatActivity implements View.OnClickListener {
-    private Button goHome1, goHome2, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19, b20, b21, b22, b23, b24, b25, b26, b27, b28, b29, b30, b31, goPrevious1, goPrevious2;
+    private Button goHome1, goHome2, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19, b20, b21, b22, b23, b24, b25, b26, b27, b28, b29, b30, b31, b32, goPrevious1, goPrevious2;
     private Boolean timeSlotAvail;
     private FirebaseDatabase database;
     private DatabaseReference reference;
     private FirebaseUser user;
     private String uid;
+    private String usernameStr;
 
     /**
      * this method is called when the CalendarActivity14 is first activated, or in other words when the xml file for the CalendarActivity14 is opened
@@ -41,7 +43,21 @@ public class CalendarActivity14 extends AppCompatActivity implements View.OnClic
         reference = database.getReference("Dates");
         user = FirebaseAuth.getInstance().getCurrentUser();
         uid = user.getUid();
+        if (savedInstanceState == null) {
+            Log.d("CalendarActivity2", "savedInstanceState is null");
+            Bundle extras = getIntent().getExtras();
 
+            if(extras == null) {
+                Log.d("CalendarActivity2", "Extra is null" + usernameStr);
+                usernameStr= null;
+            } else {
+                usernameStr= extras.getString("STRING_I_NEED");
+                Log.d("CalendarActivity2", "Extra is not null" + usernameStr);
+            }
+        } else {
+            usernameStr = (String) savedInstanceState.getSerializable("STRING_I_NEED");
+            Log.d("CalendarActivity2", "savedInstanceState is not null" + usernameStr);
+        }
         goHome1 = findViewById(R.id.goHome1);
         goHome1.setOnClickListener(this);
 
@@ -170,13 +186,17 @@ public class CalendarActivity14 extends AppCompatActivity implements View.OnClic
         b29.setOnClickListener(this);
         busyButton(b29);
 
-        b30 = findViewById(R.id.availButton31);
+        b30 = findViewById(R.id.availButton30);
         b30.setOnClickListener(this);
         busyButton(b30);
 
-        b31 = findViewById(R.id.availButton30);
+        b31 = findViewById(R.id.availButton32);
         b31.setOnClickListener(this);
         busyButton(b31);
+
+        b32 = findViewById(R.id.availButton32);
+        b32.setOnClickListener(this);
+        busyButton(b32);
     }
 
     /**
@@ -284,11 +304,15 @@ public class CalendarActivity14 extends AppCompatActivity implements View.OnClic
                 break;
             case R.id.availButton31:
                 changeButton(b31, 31);
+            case R.id.availButton32:
+                changeButton(b32, 32);
                 break;
             case R.id.goPrevious1:
             case R.id.goPrevious2:
                 startActivity(new Intent(this, CalendarActivity13.class));
                 break;
+            case R.id.saveAndCrosscheck:
+                startActivity(new Intent(this, CrossCheckResult.class));
         }
     }
 
@@ -303,7 +327,7 @@ public class CalendarActivity14 extends AppCompatActivity implements View.OnClic
        //i is the number of the button, and correlates with the i-1 on the arrayList
         String iAltStr = Integer.toString(i-1);
 
-        reference.child(uid).child("0").child("availLists").child(iAltStr).setValue(!timeSlotAvail);
+        reference.child(usernameStr).child("13").child("availLists").child(iAltStr).setValue(!timeSlotAvail);
         timeSlotAvail = !timeSlotAvail;
 
         //the boolean value is reversed when this method is called is because the method is named "changeButton"

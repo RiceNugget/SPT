@@ -5,14 +5,26 @@
     //hello
 
     <Button
-        android:id="@+id/checkSharedEventsButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/crossCheck"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/instruction"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="246dp"
-        android:layout_marginEnd="267dp"
-        android:layout_marginBottom="158dp"
-        android:text="Shared Events" />
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="83dp"
+        android:layout_marginEnd="51dp"
+        android:text="View Cross-Check Result" />
+
+    <TextView
+        android:id="@+id/instruction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:text = "@string/instruction"
+        android:fontFamily="monospace"
+        android:textColor="@color/black"
+        android:textSize="30dp"/>
 </RelativeLayout>

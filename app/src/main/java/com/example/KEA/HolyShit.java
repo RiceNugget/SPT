@@ -3,9 +3,9 @@ package com.example.KEA;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -23,6 +23,7 @@ public class HolyShit extends AppCompatActivity implements NavigationView.OnNavi
     private DrawerLayout drawer;
     private Button logout;
     private FirebaseAuth mFirebaseAuth;
+    private String usernameStr;
 
     /**
      * Will connect the layout for the navigation drawer to this class that connects portions of the UI to the layout.
@@ -33,7 +34,24 @@ public class HolyShit extends AppCompatActivity implements NavigationView.OnNavi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_holy_shit);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        mFirebaseAuth = FirebaseAuth.getInstance();
+
+        if (savedInstanceState == null) {
+            Log.d("CalendarActivity2", "savedInstanceState is null");
+            Bundle extras = getIntent().getExtras();
+
+            if(extras == null) {
+                Log.d("CalendarActivity2", "Extra is null" + usernameStr);
+                usernameStr= null;
+            } else {
+                usernameStr= extras.getString("STRING_I_NEED");
+                Log.d("CalendarActivity2", "Extra is not null" + usernameStr);
+            }
+        } else {
+            usernameStr = (String) savedInstanceState.getSerializable("STRING_I_NEED");
+            Log.d("CalendarActivity2", "savedInstanceState is not null" + usernameStr);
+        }
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -62,20 +80,23 @@ public class HolyShit extends AppCompatActivity implements NavigationView.OnNavi
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.nav_friends:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new FriendsFragment()).commit();
+            case R.id.nav_myEvents:
+                startActivity(new Intent(HolyShit.this,CreateEvent.class));
                 break;
             case R.id.nav_calendars:
-                startActivity(new Intent(HolyShit.this,CalendarActivity.class));
+                Intent intent = new Intent(HolyShit.this, CalendarActivity.class);
+                Log.d("CalendarActivity", "goHome" + usernameStr);
+                intent.putExtra("STRING_I_NEED", usernameStr);
+                startActivity(intent);
                 break;
             case R.id.nav_home:
                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new HomeFragment()).commit();
                 break;
             case R.id.nav_logout:
-                logout(logout);
-                //startActivity(new Intent(HolyShit.this,MainActivity.class));
+                //mFirebaseAuth.signOut();
+                //logout(logout);
+                startActivity(new Intent(HolyShit.this,MainActivity.class));
                 break;
         }
         drawer.closeDrawer(GravityCompat.START);

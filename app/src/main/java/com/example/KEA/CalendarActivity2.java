@@ -3,6 +3,7 @@ package com.example.KEA;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,12 +18,12 @@ import com.google.firebase.database.FirebaseDatabase;
  * also allows the user to click save and crosscheck to switch to the screen that will retrieve the availability information for all the users and summarize it.
  */
 public class CalendarActivity2 extends AppCompatActivity implements View.OnClickListener {
-    private Button goHome1, goHome2, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19, b20, b21, b22, b23, b24, b25, b26, b27, b28, b29, b30, b31, goNext1, goNext2, goPrevious1, goPrevious2;
+    private Button saveAndCrossCheck2, goHome1, goHome2, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19, b20, b21, b22, b23, b24, b25, b26, b27, b28, b29, b30, b31,b32, goNext1, goNext2, goPrevious1, goPrevious2;
     private Boolean timeSlotAvail;
     private FirebaseDatabase database;
     private DatabaseReference reference;
     private FirebaseUser user;
-    private String uid;
+    private String usernameStr;
 
     /**
      * this method is called when the CalendarActivity2 is first activated, or in other words when the xml file for the CalendarActivity2 is opened
@@ -39,7 +40,22 @@ public class CalendarActivity2 extends AppCompatActivity implements View.OnClick
         timeSlotAvail = false;
         reference = database.getReference("Dates");
         user = FirebaseAuth.getInstance().getCurrentUser();
-        uid = user.getUid();
+
+        if (savedInstanceState == null) {
+            Log.d("CalendarActivity2", "savedInstanceState is null");
+            Bundle extras = getIntent().getExtras();
+
+            if(extras == null) {
+                Log.d("CalendarActivity2", "Extra is null" + usernameStr);
+                usernameStr= null;
+            } else {
+                usernameStr= extras.getString("STRING_I_NEED");
+                Log.d("CalendarActivity2", "Extra is not null" + usernameStr);
+            }
+        } else {
+            usernameStr = (String) savedInstanceState.getSerializable("STRING_I_NEED");
+            Log.d("CalendarActivity2", "savedInstanceState is not null" + usernameStr);
+        }
 
         goHome1 = findViewById(R.id.goHome1);
         goHome1.setOnClickListener(this);
@@ -175,13 +191,25 @@ public class CalendarActivity2 extends AppCompatActivity implements View.OnClick
         b29.setOnClickListener(this);
         busyButton(b29);
 
-        b30 = findViewById(R.id.availButton31);
+        b30 = findViewById(R.id.availButton30);
         b30.setOnClickListener(this);
         busyButton(b30);
 
-        b31 = findViewById(R.id.availButton30);
+        b31 = findViewById(R.id.availButton31);
         b31.setOnClickListener(this);
         busyButton(b31);
+
+        b32 = findViewById(R.id.availButton32);
+        b32.setOnClickListener(this);
+        busyButton(b32);
+
+        b32 = findViewById(R.id.availButton32);
+        b32.setOnClickListener(this);
+        busyButton(b32);
+
+        saveAndCrossCheck2 = findViewById(R.id.saveAndCrosscheck2);
+        saveAndCrossCheck2.setOnClickListener(this);
+
     }
 
     /**
@@ -290,14 +318,22 @@ public class CalendarActivity2 extends AppCompatActivity implements View.OnClick
             case R.id.availButton31:
                 changeButton(b31, 31);
                 break;
+            case R.id.availButton32:
+                changeButton(b32, 32);
+                break;
             case R.id.goNext1:
             case R.id.goNext2:
-                startActivity(new Intent(this, CalendarActivity3.class));
+                Intent intent = new Intent(CalendarActivity2.this, CalendarActivity3.class);
+                Log.d("CalendarActivity", "goHome" + usernameStr);
+                intent.putExtra("STRING_I_NEED", usernameStr);
+                startActivity(intent);
                 break;
             case R.id.goPrevious1:
             case R.id.goPrevious2:
                 startActivity(new Intent(this, CalendarActivity.class));
                 break;
+            case R.id.saveAndCrosscheck2:
+                startActivity(new Intent(this, CrossCheckResult.class));
         }
     }
 
@@ -312,7 +348,7 @@ public class CalendarActivity2 extends AppCompatActivity implements View.OnClick
         //i is the number of the button, and correlates with the i-1 on the arrayList
         String iAltStr = Integer.toString(i - 1);
 
-        reference.child(uid).child("0").child("availLists").child(iAltStr).setValue(!timeSlotAvail);
+        reference.child(usernameStr).child("1").child("availLists").child(iAltStr).setValue(!timeSlotAvail);
         timeSlotAvail = !timeSlotAvail;
 
         //the boolean value is reversed when this method is called is because the method is named "changeButton"

@@ -11,7 +11,9 @@ public class TimesArray {
     private int year;
     private int duration;
     public int numUsers;
-
+    /**
+     * This class is not used in the app but kept just in case something happens
+     */
     public TimesArray(int day, int month, int year, int duration, int numUsers) {
         //28 30 min windows = 16 hours (starting at 6 AM to 10 PM)
         times = new Boolean[32][duration];

@@ -14,9 +14,9 @@
             android:icon="@drawable/ic_schedule"
             android:title="Calendars" />
         <item
-            android:id="@+id/nav_friends"
+            android:id="@+id/nav_myEvents"
             android:icon="@drawable/ic_friends"
-            android:title="Friends" />
+            android:title="Create Event" />
     </group>
 
     //This is an action that will not stay selected and will only perform an action
