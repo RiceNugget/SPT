@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -30,6 +32,7 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
     Event event;
     Boolean timeSlotAvail = false;
     String date = "";
+    DataSnapshot snapshot;
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference reference = database.getReference("Dates");
@@ -40,9 +43,30 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Task<DataSnapshot> task = reference.child("Events").get();
-        DataSnapshot ds =   reference.child(uid).child("0").child("1").child("0");
-        Event event = ds.getValue(Event.class);
-        String sharedEmailsFB = event.getSharedEmails();
+
+        task.addOnSuccessListener(new OnSuccessListener() {
+            @Override
+            public void onSuccess(Object o) {
+                Log.d("MRS.T", "SUCCESS ...");
+                Log.d("MRS.T", "TASK: " + task.getResult().getValue());
+
+                snapshot = (DataSnapshot) task.getResult();
+
+                for (DataSnapshot ds : snapshot.getChildren()) {
+                    Event event = ds.getValue(Event.class);
+                    String date = event.getStartDate();
+                    Log.d("DateTest", date);
+
+                }
+            }
+        });
+        task.addOnFailureListener(new OnFailureListener() {
+            public void onFailure(Exception e) {
+                Log.d("MRS.T", "An Unfortunate Error Occurred ...");
+                // handle any errors here
+                Toast.makeText(CalendarActivity.this,"Something Went Wrong", Toast.LENGTH_LONG);
+            }
+        });
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
