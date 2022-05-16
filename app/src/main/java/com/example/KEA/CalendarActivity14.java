@@ -19,7 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
  * This is the final CalendarActivity as the limit to the duration is 14 days.
  */
 public class CalendarActivity14 extends AppCompatActivity implements View.OnClickListener {
-    private Button goHome1, goHome2, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19, b20, b21, b22, b23, b24, b25, b26, b27, b28, b29, b30, b31, b32, goPrevious1, goPrevious2;
+    private Button saveAndCrosscheck14, goHome1, goHome2, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19, b20, b21, b22, b23, b24, b25, b26, b27, b28, b29, b30, b31, b32, goPrevious1, goPrevious2;
     private Boolean timeSlotAvail;
     private FirebaseDatabase database;
     private DatabaseReference reference;
@@ -58,6 +58,9 @@ public class CalendarActivity14 extends AppCompatActivity implements View.OnClic
             usernameStr = (String) savedInstanceState.getSerializable("STRING_I_NEED");
             Log.d("CalendarActivity2", "savedInstanceState is not null" + usernameStr);
         }
+        saveAndCrosscheck14 = findViewById(R.id.saveAndCrosscheck14);
+        saveAndCrosscheck14.setOnClickListener(this);
+
         goHome1 = findViewById(R.id.goHome1);
         goHome1.setOnClickListener(this);
 
@@ -311,7 +314,7 @@ public class CalendarActivity14 extends AppCompatActivity implements View.OnClic
             case R.id.goPrevious2:
                 startActivity(new Intent(this, CalendarActivity13.class));
                 break;
-            case R.id.saveAndCrosscheck:
+            case R.id.saveAndCrosscheck14:
                 startActivity(new Intent(this, CrossCheckResult.class));
         }
     }

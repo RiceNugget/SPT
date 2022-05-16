@@ -18,7 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
  * also allows the user to click save and crosscheck to switch to the screen that will retrieve the availability information for all the users and summarize it.
  */
 public class CalendarActivity7 extends AppCompatActivity implements View.OnClickListener {
-    private Button goHome1, goHome2, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19, b20, b21, b22, b23, b24, b25, b26, b27, b28, b29, b30, b31,b32, goNext1, goNext2, goPrevious1, goPrevious2;
+    private Button saveAndCrosscheck7, goHome1, goHome2, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19, b20, b21, b22, b23, b24, b25, b26, b27, b28, b29, b30, b31,b32, goNext1, goNext2, goPrevious1, goPrevious2;
     private Boolean timeSlotAvail;
     private FirebaseDatabase database;
     private DatabaseReference reference;
@@ -204,6 +204,9 @@ public class CalendarActivity7 extends AppCompatActivity implements View.OnClick
         b32 = findViewById(R.id.availButton32);
         b32.setOnClickListener(this);
         busyButton(b31);
+
+        saveAndCrosscheck7 = findViewById(R.id.saveAndCrosscheck7);
+        saveAndCrosscheck7.setOnClickListener(this);
     }
 
     /**
@@ -326,7 +329,7 @@ public class CalendarActivity7 extends AppCompatActivity implements View.OnClick
             case R.id.goPrevious2:
                 startActivity(new Intent(this, CalendarActivity6.class));
                 break;
-            case R.id.saveAndCrosscheck:
+            case R.id.saveAndCrosscheck7:
                 startActivity(new Intent(this, CrossCheckResult.class));
         }
     }

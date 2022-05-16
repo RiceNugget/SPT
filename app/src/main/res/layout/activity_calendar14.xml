@@ -970,7 +970,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" >
                 <Button
-                    android:id="@+id/SaveAndCrosscheck"
+                    android:id="@+id/saveAndCrosscheck14"
                     android:layout_height="match_parent"
                     android:layout_width="match_parent"
                     android:layout_weight="4"
