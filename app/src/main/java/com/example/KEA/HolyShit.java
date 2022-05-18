@@ -45,11 +45,11 @@ public class HolyShit extends AppCompatActivity implements NavigationView.OnNavi
                 Log.d("CalendarActivity2", "Extra is null" + usernameStr);
                 usernameStr= null;
             } else {
-                usernameStr= extras.getString("STRING_I_NEED");
+                usernameStr= extras.getString(MainActivity.usernameString);
                 Log.d("CalendarActivity2", "Extra is not null" + usernameStr);
             }
         } else {
-            usernameStr = (String) savedInstanceState.getSerializable("STRING_I_NEED");
+            usernameStr = (String) savedInstanceState.getSerializable(MainActivity.usernameString);
             Log.d("CalendarActivity2", "savedInstanceState is not null" + usernameStr);
         }
 
@@ -80,13 +80,16 @@ public class HolyShit extends AppCompatActivity implements NavigationView.OnNavi
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.nav_myEvents:
-                startActivity(new Intent(HolyShit.this,CreateEvent.class));
+            case R.id.nav_createEvent:
+                Intent createEventIntent = new Intent(HolyShit.this, CreateEvent.class);
+                Log.d("HolyShitActivity", "CreateEvent" + usernameStr);
+                createEventIntent.putExtra(MainActivity.usernameString, usernameStr);
+                startActivity(createEventIntent);
                 break;
             case R.id.nav_calendars:
                 Intent intent = new Intent(HolyShit.this, CalendarActivity.class);
-                Log.d("CalendarActivity", "goHome" + usernameStr);
-                intent.putExtra("STRING_I_NEED", usernameStr);
+                Log.d("HolyShitActivity", "Calendars" + usernameStr);
+                intent.putExtra(MainActivity.usernameString, usernameStr);
                 startActivity(intent);
                 break;
             case R.id.nav_home:
@@ -123,7 +126,10 @@ public class HolyShit extends AppCompatActivity implements NavigationView.OnNavi
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.createEventButton:
-                startActivity(new Intent(this,CreateEvent.class));
+                Intent createEventIntent2 = new Intent(HolyShit.this, CreateEvent.class);
+                Log.d("HolyShitActivity", "CreateEvent" + usernameStr);
+                createEventIntent2.putExtra(MainActivity.usernameString, usernameStr);
+                startActivity(createEventIntent2);
                 break;
         }
     }

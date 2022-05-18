@@ -11,7 +11,9 @@ public class User {
         this.name = name;
         this.available = available;
     }
+public User(){
 
+}
     public boolean isAvailable() {
         return available;
     }
@@ -54,5 +56,8 @@ public class User {
     }
     public void setName(String name) {
         this.name = name;
+    }
+    public String getUserName(){
+        return userName;
     }
 }

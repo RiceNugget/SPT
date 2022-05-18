@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private String usernameStr;
     private FirebaseDatabase database;
     private DatabaseReference myRef;
-
+    public static final String usernameString = "usernameString";
     /**
      * This method is called when the sign in screen is opened
      * @param savedInstanceState allows the app to be reopened at the same state as it was closed, can help if the app were to crash
@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         enterPassword= findViewById(R.id.enterPassword);
         enterEmail = findViewById(R.id.enterEmail);
+        enterUsername = findViewById(R.id.enterUserNameMain);
 
         progressBar = findViewById(R.id.progressBar);
 
@@ -104,11 +105,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String password = enterPassword.getText().toString().trim();
         usernameStr = enterUsername.getText().toString().trim();
 
-        if(usernameStr.isEmpty()){
-            enterUsername.setError("Username is required!");
-            enterUsername.requestFocus();
-            return;
-        }
+
         if(email.isEmpty()){
             enterEmail.setError("Email is required!");
             enterEmail.requestFocus();
@@ -141,8 +138,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     Intent intent = new Intent(MainActivity.this, HolyShit.class);
-                    Log.d("CalendarActivity", "goHome" + usernameStr);
-                    intent.putExtra("STRING_I_NEED", usernameStr);
+                    Log.d("MainActivity", "Sign in username: " + usernameStr);
+                    intent.putExtra(usernameString, usernameStr);
                     startActivity(intent);
                 }
                 else{

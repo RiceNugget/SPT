@@ -51,11 +51,11 @@ public class CalendarActivity14 extends AppCompatActivity implements View.OnClic
                 Log.d("CalendarActivity2", "Extra is null" + usernameStr);
                 usernameStr= null;
             } else {
-                usernameStr= extras.getString("STRING_I_NEED");
+                usernameStr= extras.getString(MainActivity.usernameString);
                 Log.d("CalendarActivity2", "Extra is not null" + usernameStr);
             }
         } else {
-            usernameStr = (String) savedInstanceState.getSerializable("STRING_I_NEED");
+            usernameStr = (String) savedInstanceState.getSerializable(MainActivity.usernameString);
             Log.d("CalendarActivity2", "savedInstanceState is not null" + usernameStr);
         }
         goHome1 = findViewById(R.id.goHome1);

@@ -25,7 +25,7 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
     private FirebaseUser user;
     private String uid;
     private String usernameStr = "";
-
+    private String friendUsernames;
 
 
     /**
@@ -53,7 +53,8 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
                 Log.d("CalendarActivity", "Extra is null" + usernameStr);
                 usernameStr= null;
             } else {
-                usernameStr= extras.getString("STRING_I_NEED");
+                friendUsernames  = extras.getString(CreateEvent.friendUsernameIntent);
+                usernameStr= extras.getString(MainActivity.usernameString);
                 Log.d("CalendarActivity", "Extra is not null" + usernameStr);
             }
         } else {
@@ -319,7 +320,8 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
             case R.id.goNext2:
                 Intent intent = new Intent(CalendarActivity.this, CalendarActivity2.class);
                 Log.d("CalendarActivity", "goHome" + usernameStr);
-                intent.putExtra("STRING_I_NEED", usernameStr);
+                intent.putExtra(MainActivity.usernameString, usernameStr);
+                intent.putExtra(CreateEvent.friendUsernameIntent, friendUsernames);
                 startActivity(intent);
                 break;
             case R.id.saveAndCrosscheck:

@@ -26,8 +26,8 @@
     <string name="two_thirty_PM_block">2:30–3:00 PM</string>
     <string name="three_PM_block">3:00–3:30 PM</string>
     <string name="three_thirty_PM_block">3:30–4:00 PM</string>
-    <string name="four_PM_block">4:00–4:30 PM-</string>
-    <string name="four_thirty_PM_block">4:30–5:00 PM-</string>
+    <string name="four_PM_block">4:00–4:30 PM</string>
+    <string name="four_thirty_PM_block">4:30–5:00 PM</string>
     <string name="five_PM_block">5:00–5:30 PM</string>
     <string name="five_thirty_PM_block">5:30–6:00 PM</string>
     <string name="six_PM_block">6:00–6:30 PM</string>

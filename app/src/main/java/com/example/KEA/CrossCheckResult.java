@@ -24,26 +24,30 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import android.os.Bundle;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class CrossCheckResult extends AppCompatActivity {
     private ArrayList<DateAvail> currentUserAvail = new ArrayList<>();
-    private ArrayList<DateAvail> otherUserAvail = new ArrayList<>();
-    private Event cEvent;
+    private List<DateAvail> otherUserAvail = new ArrayList<>();
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference reference = database.getReference("Dates");
     DataSnapshot snapshot;
-    private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     String usernameStr, friendUsernameStr;
     ListView listView;
     private EditText username, friendUsername;
     private Button crossCheckResult;
     ArrayList<DateAvail> bob = new ArrayList<>();
+    List<String> friends = new ArrayList<>();
+    ArrayList<ArrayList<ArrayList<Boolean>>> totalUsers = new ArrayList<>();
+    ArrayList<ArrayList<List<Boolean>>> total = new ArrayList<>(4);
+    int[][] timeTable = new int[14][32];
 
     /**
      * Initiates username, friend's username and a button that will call the getBothUserListDate method.
@@ -56,6 +60,11 @@ public class CrossCheckResult extends AppCompatActivity {
         setContentView(R.layout.activity_cross_check);
         //Getting the current event of the user and the user friend
         listView = (ListView) findViewById(R.id.CrossCheckResultsList);
+        friends.add("anh");
+        friends.add("krishna");
+        friends.add("eeman");
+        int numUsers = friends.size()+1;
+
 
         friendUsername = findViewById(R.id.enterFriendUserName);
         username = findViewById(R.id.enterUserName);
@@ -80,7 +89,6 @@ public class CrossCheckResult extends AppCompatActivity {
      *  The only case where the boolean value for both user is true is when both users are free.
      */
     public void getBothUserListDate(){
-
         friendUsernameStr = friendUsername.getText().toString().trim();
         usernameStr = username.getText().toString().trim();
 
@@ -94,7 +102,51 @@ public class CrossCheckResult extends AppCompatActivity {
             friendUsername.requestFocus();
             return;
         }
+/*
+    for (String s : friends) {
+        ArrayList<ArrayList<Boolean>> boo = new ArrayList<ArrayList<Boolean>>();
 
+        Task<DataSnapshot> task = reference.child(s).get();
+        task.addOnSuccessListener(new OnSuccessListener() {
+            @Override
+            public void onSuccess(Object o) {
+                Log.d("CrossCheck", "SUCCESS ...");
+                Log.d("CrossCheck", "TASK: " + task.getResult().getValue());
+
+                snapshot = (DataSnapshot) task.getResult();
+                ArrayList<DateAvail> tester = new ArrayList<>();
+
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                   tester.add(dataSnapshot.getValue(DateAvail.class));
+                }
+
+                for(DateAvail d : tester){
+                    boo.add((ArrayList<Boolean>) d.getAvailLists());
+                }
+
+                Log.d("CrossCheckResult", s+ " List of list" + boo.toString());
+
+                task.addOnFailureListener(new OnFailureListener() {
+                    public void onFailure(Exception e) {
+                        Log.d("CrossCheck", "An Unfortunate Error Occurred ...");
+                    }
+                });
+            }
+        });
+        totalUsers.add(boo);
+    }
+        Log.d("CrossCheckResult", " List of List of list" + totalUsers.toString());
+
+        for(ArrayList<List<Boolean>> p : total ) {
+            System.out.println(p);
+            for (int i = 0; i < 14; i++) {
+                for (int k = 0; k < 32; k++) {
+                    if(p.get(i).get(k) == true) {
+                        timeTable[i][k] += 1;
+                    }
+                }
+            }
+        }*/
 
         Task<DataSnapshot> task = reference.child(usernameStr).get();
 
@@ -126,11 +178,9 @@ public class CrossCheckResult extends AppCompatActivity {
                         Log.d("CrossCheckResult", "otherUserAvail" + otherUserAvail.toString());
 
                         //instantiate the custom list adapter
-                        //  CustomListAdapter adapter = new CustomListAdapter(CrossCheckResult.this, currentUserAvail);
+                        CustomListAdapter adapter = new CustomListAdapter(CrossCheckResult.this,2, currentUserAvail);
 
-                        //listView.setAdapter(adapter);
-
-
+                        listView.setAdapter(adapter);
 
                         for (int k = 0; k < 14; k++){
 
@@ -145,10 +195,9 @@ public class CrossCheckResult extends AppCompatActivity {
                             List<Boolean> both=new ArrayList<Boolean>(Arrays.asList(new Boolean[32]));
                             Collections.fill(both, Boolean.FALSE);
 
-                           // ArrayList<Boolean> both = new ArrayList<Boolean>(32);
-                           /* for (int m = 0; m < 32; m++){
+                            for (int m = 0; m < 32; m++){
                                 both.set(m, false);
-                            }*/
+                            }
                             Log.d("CrossCheckResult", "both" + both.toString());
                             for (int i = 0; i < 32; i++){
                                 if(s.get(i) == p.get(i) && s.get(i) == true ){

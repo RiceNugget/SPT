@@ -24,6 +24,7 @@ public class CalendarActivity2 extends AppCompatActivity implements View.OnClick
     private DatabaseReference reference;
     private FirebaseUser user;
     private String usernameStr;
+    private String friendUsernames;
 
     /**
      * this method is called when the CalendarActivity2 is first activated, or in other words when the xml file for the CalendarActivity2 is opened
@@ -49,11 +50,12 @@ public class CalendarActivity2 extends AppCompatActivity implements View.OnClick
                 Log.d("CalendarActivity2", "Extra is null" + usernameStr);
                 usernameStr= null;
             } else {
-                usernameStr= extras.getString("STRING_I_NEED");
+                friendUsernames  = extras.getString(CreateEvent.friendUsernameIntent);
+                usernameStr= extras.getString(MainActivity.usernameString);
                 Log.d("CalendarActivity2", "Extra is not null" + usernameStr);
             }
         } else {
-            usernameStr = (String) savedInstanceState.getSerializable("STRING_I_NEED");
+            usernameStr = (String) savedInstanceState.getSerializable(MainActivity.usernameString);
             Log.d("CalendarActivity2", "savedInstanceState is not null" + usernameStr);
         }
 
@@ -325,7 +327,8 @@ public class CalendarActivity2 extends AppCompatActivity implements View.OnClick
             case R.id.goNext2:
                 Intent intent = new Intent(CalendarActivity2.this, CalendarActivity3.class);
                 Log.d("CalendarActivity", "goHome" + usernameStr);
-                intent.putExtra("STRING_I_NEED", usernameStr);
+                intent.putExtra(MainActivity.usernameString, usernameStr);
+                intent.putExtra(CreateEvent.friendUsernameIntent, friendUsernames);
                 startActivity(intent);
                 break;
             case R.id.goPrevious1:

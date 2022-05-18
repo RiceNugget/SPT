@@ -25,12 +25,12 @@ public class SharedEvents extends AppCompatActivity {
     DataSnapshot snapshot;
     String userEmail;
 
-    /**
+   /**
      * This class is not used in the app but kept just in case something happens
-     * @param savedInstanceState
+     * @param //savedInstanceState
      */
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    //@Override
+   /* protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shared_events);
         userEmail = user.getEmail();
@@ -70,7 +70,7 @@ public class SharedEvents extends AppCompatActivity {
         Log.d("MRS.T", "Exiting readDatabase method ...");
 
 
-        }
+        }*/
 
     public void createSharedEvents(Event event){
         CreateEvent eventForReceiver = new CreateEvent(event.getEventName(), event.getMonth(), event.getDay(), event.getYear());
