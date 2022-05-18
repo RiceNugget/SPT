@@ -193,7 +193,7 @@ public class CalendarActivity14 extends AppCompatActivity implements View.OnClic
         b30.setOnClickListener(this);
         busyButton(b30);
 
-        b31 = findViewById(R.id.availButton32);
+        b31 = findViewById(R.id.availButton31);
         b31.setOnClickListener(this);
         busyButton(b31);
 

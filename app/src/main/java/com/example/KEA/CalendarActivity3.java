@@ -60,7 +60,7 @@ public class CalendarActivity3 extends AppCompatActivity implements View.OnClick
             usernameStr = (String) savedInstanceState.getSerializable(MainActivity.usernameString);
             Log.d("CalendarActivity3", "savedInstanceState is not null" + usernameStr);
         }
-        saveAndCrossCheck3 = findViewById(R.id.saveAndCrosscheck4);
+        saveAndCrossCheck3 = findViewById(R.id.saveAndCrosscheck3);
         saveAndCrossCheck3.setOnClickListener(this);
 
         goHome1 = findViewById(R.id.goHome1);

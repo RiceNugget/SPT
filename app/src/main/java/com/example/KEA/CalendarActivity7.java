@@ -203,7 +203,7 @@ public class CalendarActivity7 extends AppCompatActivity implements View.OnClick
 
         b32 = findViewById(R.id.availButton32);
         b32.setOnClickListener(this);
-        busyButton(b31);
+        busyButton(b32);
 
         saveAndCrosscheck7 = findViewById(R.id.saveAndCrosscheck7);
         saveAndCrosscheck7.setOnClickListener(this);
