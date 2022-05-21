@@ -8,6 +8,7 @@ public class DateAvail {
     private int day;
     private int year;
     public List<Boolean>availLists;
+    public List<Integer>availNum;
     private int numUsers;
 
     /**
@@ -42,12 +43,11 @@ public class DateAvail {
     }
 
     //the constructor below is for the cross-checking method
-    public DateAvail(int month,int day, int year, int numUsers, ArrayList<Boolean> availLists){
+    public DateAvail(int month,int day, int year, int numUsers){
         this.month = month;
         this.day = day;
         this.year = year;
         this.numUsers = numUsers;
-        this.availLists = availLists;
         }
 
 
@@ -79,9 +79,15 @@ public class DateAvail {
     public List<Boolean> getAvailLists() {
         return availLists;
     }
-
+    public List<Integer> getAvailNum() {
+        return availNum;
+    }
     public void setAvailLists(List<Boolean> availLists) {
         this.availLists = availLists;
+    }
+
+    public void setAvailNum(List<Integer> availNum) {
+        this.availNum = availNum;
     }
 
     public boolean getAvailOfTime(int i){

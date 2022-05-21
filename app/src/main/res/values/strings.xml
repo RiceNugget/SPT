@@ -42,5 +42,6 @@
     <string name="busy_button">set</string>
     <string name="set_date">mm/dd/yyyy</string>
     <string name="busy_label">Set Availability</string>
+    <string name="crossCheckInstruction">Double click on the get result button to crosscheck. Enter in your friends\' usernames between commas with no space! The result shows the number of people who are free</string>
     <string name="instruction">Hello users! To get started, press the + button to create a new event. If you have already made and shared an event, press crosscheck!</string>
 </resources>

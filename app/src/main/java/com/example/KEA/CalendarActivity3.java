@@ -324,6 +324,7 @@ public class CalendarActivity3 extends AppCompatActivity implements View.OnClick
                 Intent intent = new Intent(CalendarActivity3.this, CalendarActivity4.class);
                 Log.d("CalendarActivity", "goHome" + usernameStr);
                 intent.putExtra(MainActivity.usernameString, usernameStr);
+
                 startActivity(intent);
                 break;
             case R.id.goPrevious1:

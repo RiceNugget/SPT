@@ -316,6 +316,7 @@ public class CalendarActivity14 extends AppCompatActivity implements View.OnClic
                 break;
             case R.id.saveAndCrosscheck14:
                 startActivity(new Intent(this, CrossCheckResult.class));
+                break;
         }
     }
 
