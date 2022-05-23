@@ -18,7 +18,7 @@ import java.util.Map;
 class CustomListAdapter extends ArrayAdapter {
     private Context context; //context
     private List<DateAvail> items; //data source of the list adapter
-    private Map<DateAvail, Boolean> noah;
+    private Map<DateAvail, Integer> noah;
 
 
     /**
@@ -34,8 +34,8 @@ class CustomListAdapter extends ArrayAdapter {
         this.items = items;
         this.noah = new HashMap<>();
         for (DateAvail s : items) {
-            for (Boolean boo : s.availLists) {
-                noah.put(s, boo);
+            for (Integer inte : s.availNum) {
+                noah.put(s, inte);
             }
         }
     }
@@ -46,7 +46,7 @@ class CustomListAdapter extends ArrayAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         //get the dates information
         String date = Integer.toString(items.get(position).getMonth()) + "/" + Integer.toString(items.get(position).getDay()) + "/" + Integer.toString(items.get(position).getYear());
-        List<Boolean> avail = items.get(position).getAvailLists();
+        List<Integer> avail = items.get(position).getAvailNum();
 
         // inflate the layout for each list row
 

@@ -51,11 +51,11 @@ public class CalendarActivity14 extends AppCompatActivity implements View.OnClic
                 Log.d("CalendarActivity2", "Extra is null" + usernameStr);
                 usernameStr= null;
             } else {
-                usernameStr= extras.getString("STRING_I_NEED");
+                usernameStr= extras.getString(MainActivity.usernameString);
                 Log.d("CalendarActivity2", "Extra is not null" + usernameStr);
             }
         } else {
-            usernameStr = (String) savedInstanceState.getSerializable("STRING_I_NEED");
+            usernameStr = (String) savedInstanceState.getSerializable(MainActivity.usernameString);
             Log.d("CalendarActivity2", "savedInstanceState is not null" + usernameStr);
         }
         saveAndCrosscheck14 = findViewById(R.id.saveAndCrosscheck14);
@@ -193,7 +193,7 @@ public class CalendarActivity14 extends AppCompatActivity implements View.OnClic
         b30.setOnClickListener(this);
         busyButton(b30);
 
-        b31 = findViewById(R.id.availButton32);
+        b31 = findViewById(R.id.availButton31);
         b31.setOnClickListener(this);
         busyButton(b31);
 
@@ -316,6 +316,7 @@ public class CalendarActivity14 extends AppCompatActivity implements View.OnClic
                 break;
             case R.id.saveAndCrosscheck14:
                 startActivity(new Intent(this, CrossCheckResult.class));
+                break;
         }
     }
 

@@ -1,11 +1,14 @@
 package com.example.KEA;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.google.firebase.database.DatabaseReference;
 
 public class Event {
     private String eventName;
     private int month, day, year;
-    private String sharedEmails;
+    private List sharedUsers;
 
     /**
      * Create and event with an event's name, month, day, year of the start date, and the emails that user shares with
@@ -13,14 +16,14 @@ public class Event {
      * @param month of the start date
      * @param day of the start date
      * @param year of the start date
-     * @param sharedEmails emails that the user shares the event with
+     * @param sharedUsers users that the user shares the event with
      */
-    public Event(String eventName, int month, int day, int year, String sharedEmails) {
+    public Event(String eventName, int month, int day, int year, List sharedUsers) {
         this.eventName = eventName;
         this.month = month;
         this.day = day;
         this.year = year;
-        this.sharedEmails = sharedEmails;
+        this.sharedUsers = sharedUsers;
     }
 
     /**
@@ -38,15 +41,15 @@ public class Event {
     }
     public Event() {
         eventName = "";
-        sharedEmails = "";
+        sharedUsers = new ArrayList<String>();
     }
 
     public void setEventName(String eventName) {
         this.eventName = eventName;
     }
 
-    public void setSharedEmails(String sharedEmails) {
-        this.sharedEmails = sharedEmails;
+    public void setSharedUsers(List<String> sharedUsers) {
+        this.sharedUsers = sharedUsers;
     }
 
     public void setMonth(int month) {
@@ -78,8 +81,8 @@ public class Event {
         return year;
     }
 
-    public String getSharedEmails() {
-        return sharedEmails;
+    public List getSharedUsers() {
+        return sharedUsers;
     }
 
 }

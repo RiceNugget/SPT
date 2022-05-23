@@ -79,7 +79,7 @@
                     android:layout_width="match_parent"
                     android:layout_weight="4"
                     android:padding="10sp"
-                    android:text="D2: mm/dd/yyyy"
+                    android:text="D2"
                     android:textColor="@color/black"
                     android:gravity="center_horizontal"
                     />

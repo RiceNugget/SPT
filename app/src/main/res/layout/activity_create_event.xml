@@ -7,20 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".CreateEvent">
 
-    <TextView
-        android:id="@+id/username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="monospace"
-        android:text="Username"
-        android:textColor="@color/black"
-        android:textSize="17sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintEnd_toStartOf="@+id/enterUsername2"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createAnEvent" />
-
     <EditText
         android:id="@+id/enterEventName"
         android:layout_width="270dp"
@@ -34,7 +20,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/enterUsername2"
+        app:layout_constraintTop_toBottomOf="@+id/createAnEvent"
         tools:ignore="TextContrastCheck" />
 
     <androidx.appcompat.widget.Toolbar
@@ -61,7 +47,7 @@
         app:layout_constraintEnd_toStartOf="@+id/enterEventName"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username" />
+        app:layout_constraintTop_toBottomOf="@+id/createAnEvent" />
 
     <TextView
         android:id="@+id/StartDate"
@@ -92,30 +78,14 @@
         app:layout_constraintTop_toBottomOf="@+id/StartDate" />
 
     <EditText
-        android:id="@+id/enterUsername2"
-        android:layout_width="270dp"
-        android:layout_height="50dp"
-        android:fontFamily="monospace"
-        android:gravity="start|top"
-        android:hint="Enter your username"
-        android:inputType="textMultiLine"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toTopOf="@+id/enterEventName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/username"
-        app:layout_constraintTop_toBottomOf="@+id/createAnEvent"
-        tools:ignore="TextContrastCheck" />
-
-    <EditText
         android:id="@+id/enterEmailsInvite"
-        android:layout_width="270dp"
-        android:layout_height="50dp"
+        android:layout_width="253dp"
+        android:layout_height="86dp"
         android:autofillHints=""
         android:ems="10"
         android:fontFamily="monospace"
         android:gravity="start|top"
-        android:hint="Enter your friend's username"
+        android:hint="Enter your friend's username separated with comma and no space"
         android:inputType="textMultiLine"
         android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/CreateEventButton"
@@ -159,11 +129,10 @@
         android:id="@+id/CreateEventButton"
         android:layout_width="270dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="196dp"
+        android:layout_marginBottom="220dp"
         android:text="Create Event"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

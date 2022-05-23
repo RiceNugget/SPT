@@ -7,10 +7,18 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Is responsible for the backend code behind the first calendar activity display. This display shows the time slots for the assigned by the person who creates
@@ -25,7 +33,8 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
     private FirebaseUser user;
     private String uid;
     private String usernameStr = "";
-
+    private String friendUsernames;
+    DataSnapshot snapshot;
 
 
     /**
@@ -53,7 +62,8 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
                 Log.d("CalendarActivity", "Extra is null" + usernameStr);
                 usernameStr= null;
             } else {
-                usernameStr= extras.getString("STRING_I_NEED");
+                friendUsernames  = extras.getString(CreateEvent.friendUsernameIntent);
+                usernameStr= extras.getString(MainActivity.usernameString);
                 Log.d("CalendarActivity", "Extra is not null" + usernameStr);
             }
         } else {
@@ -319,7 +329,8 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
             case R.id.goNext2:
                 Intent intent = new Intent(CalendarActivity.this, CalendarActivity2.class);
                 Log.d("CalendarActivity", "goHome" + usernameStr);
-                intent.putExtra("STRING_I_NEED", usernameStr);
+                intent.putExtra(MainActivity.usernameString, usernameStr);
+                intent.putExtra(CreateEvent.friendUsernameIntent, friendUsernames);
                 startActivity(intent);
                 break;
             case R.id.saveAndCrosscheck:
@@ -367,5 +378,40 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
     public void freeButton(Button b) {
         b.setBackgroundColor(Color.GREEN);
         b.setText("Free");
+    }
+
+    /**
+     * For future implication of updating buttons
+     * @param b button
+     * @param i the button's corresponding place in an availList
+     */
+    public void setButton(Button b, int i){
+
+        Task<DataSnapshot> task = reference.child(usernameStr).child("0").get();
+        task.addOnSuccessListener(new OnSuccessListener() {
+            @Override
+            public void onSuccess(Object o) {
+
+                snapshot = (DataSnapshot) task.getResult();
+                List<Boolean> boo = new ArrayList<Boolean>();
+
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    boo = dataSnapshot.getValue(List.class);
+                }
+
+                if(boo.get(i)){
+                    freeButton(b);
+                }
+                else{
+                    busyButton(b);
+                }
+                task.addOnFailureListener(new OnFailureListener() {
+                    public void onFailure(Exception e) {
+                        Log.d("CrossCheck", "An Unfortunate Error Occurred ...");
+                    }
+                });
+            }
+        });
+
     }
 }

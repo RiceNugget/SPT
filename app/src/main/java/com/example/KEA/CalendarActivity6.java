@@ -51,11 +51,11 @@ public class CalendarActivity6 extends AppCompatActivity implements View.OnClick
                 Log.d("CalendarActivity2", "Extra is null" + usernameStr);
                 usernameStr= null;
             } else {
-                usernameStr= extras.getString("STRING_I_NEED");
+                usernameStr= extras.getString(MainActivity.usernameString);
                 Log.d("CalendarActivity2", "Extra is not null" + usernameStr);
             }
         } else {
-            usernameStr = (String) savedInstanceState.getSerializable("STRING_I_NEED");
+            usernameStr = (String) savedInstanceState.getSerializable(MainActivity.usernameString);
             Log.d("CalendarActivity2", "savedInstanceState is not null" + usernameStr);
         }
 
@@ -322,7 +322,7 @@ public class CalendarActivity6 extends AppCompatActivity implements View.OnClick
             case R.id.goNext2:
                 Intent intent = new Intent(CalendarActivity6.this, CalendarActivity7.class);
                 Log.d("CalendarActivity", "goHome" + usernameStr);
-                intent.putExtra("STRING_I_NEED", usernameStr);
+                intent.putExtra(MainActivity.usernameString, usernameStr);
                 startActivity(intent);
                 break;
             case R.id.goPrevious1:
