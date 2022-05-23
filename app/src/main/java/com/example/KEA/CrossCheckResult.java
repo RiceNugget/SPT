@@ -252,7 +252,7 @@ public class CrossCheckResult extends AppCompatActivity {
 */
 
     }
-
+//hello
     /**
      * call on the CustomListAdapter to show the result of the crossCheck
      */
